@@ -22,7 +22,7 @@ SOFTWARE.
 
 #pragma once
 
-#include "Assembler.hxx"
+#include "Base.hxx"
 
 #include "Export.hxx"
 
@@ -35,32 +35,32 @@ struct ModuleState
 {
     BOOL Initialized;
 
-    HMODULE hModule;
+    HMODULE Module;
 
     LPASSEMBLER Assembler;
 
-    LPACQUIREDIRECTDRAWTHREADLOCK lpAcquireInternalLock;
-    LPCOMPLETECREATESYSTEMMEMORYSURFACE lpCompleteCreateSysmemSurface;
-    LPDIRECT3DPARSEUNKNOWNCOMMAND lpParseUnknownCommand;
-    LPDIRECTDRAWGETATTACHEDSURFACELOCAL lpGetAttachedSurfaceLocal;
-    LPDIRECTDRAWINTERNALLOCK lpInternalLock;
-    LPDIRECTDRAWINTERNALUNLOCK lpInternalUnlock;
-    LPDIRECTSOUNDHELP lpDirectSoundHelp;
-    LPDIRECTDRAWCREATE lpDirectDrawCreate;
-    LPDIRECTDRAWCREATECLIPPER lpDirectDrawCreateClipper;
-    LPDIRECTDRAWCREATEEX lpDirectDrawCreateEx;
-    LPDIRECTDRAWENUMA lpDirectDrawEnumerateA;
-    LPDIRECTDRAWENUMERATEEXA lpDirectDrawEnumerateExA;
-    LPDIRECTDRAWENUMERATEEXW lpDirectDrawEnumerateExW;
-    LPDIRECTDRAWENUMW lpDirectDrawEnumerateW;
-    LPDLLCANUNLOADNOW lpCanUnloadNow;
-    LPGETCLASSOBJECT lpGetClassObject;
-    LPGETDIRECTDRAWSURFACELOCAL lpGetDirectDrawSurfaceLocal;
-    LPGETOLETHUNKDATA lpGetOLEThunkData;
-    LPGETSURFACEFROMDEVICECONTEXT lpGetSurfaceFromDeviceContext;
-    LPREGISTERSPECIALCASE lpRegisterSpecialCase;
-    LPRELEASEDIRECTDRAWTHREADLOCK lpReleaseThreadLock;
-    LPSETAPPLICATIONCOMPATIBILITYDATA lpSetApplicationCompatibilityData;
+    LPACQUIREDIRECTDRAWTHREADLOCK AcquireInternalLock;
+    LPCOMPLETECREATESYSTEMMEMORYSURFACE CompleteCreateSysmemSurface;
+    LPDIRECT3DPARSEUNKNOWNCOMMAND ParseUnknownCommand;
+    LPDIRECTDRAWGETATTACHEDSURFACELOCAL GetAttachedSurfaceLocal;
+    LPDIRECTDRAWINTERNALLOCK InternalLock;
+    LPDIRECTDRAWINTERNALUNLOCK InternalUnlock;
+    LPDIRECTSOUNDHELP DirectSoundHelp;
+    LPDIRECTDRAWCREATE DirectDrawCreate;
+    LPDIRECTDRAWCREATECLIPPER DirectDrawCreateClipper;
+    LPDIRECTDRAWCREATEEX DirectDrawCreateEx;
+    LPDIRECTDRAWENUMA DirectDrawEnumerateA;
+    LPDIRECTDRAWENUMERATEEXA DirectDrawEnumerateExA;
+    LPDIRECTDRAWENUMERATEEXW DirectDrawEnumerateExW;
+    LPDIRECTDRAWENUMW DirectDrawEnumerateW;
+    LPDLLCANUNLOADNOW DllCanUnloadNow;
+    LPDLLGETCLASSOBJECT DllGetClassObject;
+    LPGETDIRECTDRAWSURFACELOCAL GetDirectDrawSurfaceLocal;
+    LPGETOLETHUNKDATA GetOLEThunkData;
+    LPGETSURFACEFROMDEVICECONTEXT GetSurfaceFromDeviceContext;
+    LPREGISTERSPECIALCASE RegisterSpecialCase;
+    LPRELEASEDIRECTDRAWTHREADLOCK ReleaseThreadLock;
+    LPSETAPPLICATIONCOMPATIBILITYDATA SetApplicationCompatibilityData;
 };
 
 extern ModuleState Module;

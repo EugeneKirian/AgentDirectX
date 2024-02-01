@@ -36,74 +36,74 @@ BOOL InitializeModule()
 
     if (PathCombineA(path, directory, DIRECT_DRAW_LIBRARY_NAME) == NULL) { return FALSE; }
 
-    Module.hModule = LoadLibraryA(path);
+    Module.Module = LoadLibraryA(path);
 
-    if (Module.hModule == NULL) { return FALSE; }
+    if (Module.Module == NULL) { return FALSE; }
 
-    Module.lpAcquireInternalLock = (LPACQUIREDIRECTDRAWTHREADLOCK)GetProcAddress(Module.hModule, DIRECT_DRAW_ACQUIRE_DIRECT_DRAW_THREAD_LOCK_NAME);
-    if (Module.lpAcquireInternalLock == NULL) { ReleaseModule(); return NULL; }
+    Module.AcquireInternalLock = (LPACQUIREDIRECTDRAWTHREADLOCK)GetProcAddress(Module.Module, DIRECT_DRAW_ACQUIRE_DIRECT_DRAW_THREAD_LOCK_NAME);
+    if (Module.AcquireInternalLock == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpCompleteCreateSysmemSurface = (LPCOMPLETECREATESYSTEMMEMORYSURFACE)GetProcAddress(Module.hModule, DIRECT_DRAW_COMPLETE_CREATE_SYSTEM_MEMORY_SURFACE_NAME);
-    if (Module.lpCompleteCreateSysmemSurface == NULL) { ReleaseModule(); return NULL; }
+    Module.CompleteCreateSysmemSurface = (LPCOMPLETECREATESYSTEMMEMORYSURFACE)GetProcAddress(Module.Module, DIRECT_DRAW_COMPLETE_CREATE_SYSTEM_MEMORY_SURFACE_NAME);
+    if (Module.CompleteCreateSysmemSurface == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpParseUnknownCommand = (LPDIRECT3DPARSEUNKNOWNCOMMAND)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_3D_PARSE_UNKNOWN_COMMAND_NAME);
-    if (Module.lpParseUnknownCommand == NULL) { ReleaseModule(); return NULL; }
+    Module.ParseUnknownCommand = (LPDIRECT3DPARSEUNKNOWNCOMMAND)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_3D_PARSE_UNKNOWN_COMMAND_NAME);
+    if (Module.ParseUnknownCommand == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpGetAttachedSurfaceLocal = (LPDIRECTDRAWGETATTACHEDSURFACELOCAL)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_GET_ATTACHED_SURFACE_LOCAL_NAME);
-    if (Module.lpGetAttachedSurfaceLocal == NULL) { ReleaseModule(); return NULL; }
+    Module.GetAttachedSurfaceLocal = (LPDIRECTDRAWGETATTACHEDSURFACELOCAL)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_GET_ATTACHED_SURFACE_LOCAL_NAME);
+    if (Module.GetAttachedSurfaceLocal == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpInternalLock = (LPDIRECTDRAWINTERNALLOCK)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_INTERNAL_LOCK_NAME);
-    if (Module.lpInternalLock == NULL) { ReleaseModule(); return NULL; }
+    Module.InternalLock = (LPDIRECTDRAWINTERNALLOCK)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_INTERNAL_LOCK_NAME);
+    if (Module.InternalLock == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpInternalUnlock = (LPDIRECTDRAWINTERNALUNLOCK)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_INTERAL_UNLOCK_NAME);
-    if (Module.lpInternalUnlock == NULL) { ReleaseModule(); return NULL; }
+    Module.InternalUnlock = (LPDIRECTDRAWINTERNALUNLOCK)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_INTERAL_UNLOCK_NAME);
+    if (Module.InternalUnlock == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectSoundHelp = (LPDIRECTSOUNDHELP)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_SOUND_HELP_NAME);
-    if (Module.lpDirectSoundHelp == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectSoundHelp = (LPDIRECTSOUNDHELP)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_SOUND_HELP_NAME);
+    if (Module.DirectSoundHelp == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawCreate = (LPDIRECTDRAWCREATE)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_NAME);
-    if (Module.lpDirectDrawCreate == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawCreate = (LPDIRECTDRAWCREATE)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_NAME);
+    if (Module.DirectDrawCreate == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawCreateClipper = (LPDIRECTDRAWCREATECLIPPER)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_CLIPPER_NAME);
-    if (Module.lpDirectDrawCreateClipper == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawCreateClipper = (LPDIRECTDRAWCREATECLIPPER)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_CLIPPER_NAME);
+    if (Module.DirectDrawCreateClipper == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawCreateEx = (LPDIRECTDRAWCREATEEX)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_EX_NAME);
-    if (Module.lpDirectDrawCreateEx == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawCreateEx = (LPDIRECTDRAWCREATEEX)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_EX_NAME);
+    if (Module.DirectDrawCreateEx == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawEnumerateA = (LPDIRECTDRAWENUMA)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_A_NAME);
-    if (Module.lpDirectDrawEnumerateA == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawEnumerateA = (LPDIRECTDRAWENUMA)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_A_NAME);
+    if (Module.DirectDrawEnumerateA == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawEnumerateExA = (LPDIRECTDRAWENUMERATEEXA)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_A_NAME);
-    if (Module.lpDirectDrawEnumerateExA == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawEnumerateExA = (LPDIRECTDRAWENUMERATEEXA)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_A_NAME);
+    if (Module.DirectDrawEnumerateExA == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawEnumerateExW = (LPDIRECTDRAWENUMERATEEXW)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_W_NAME);
-    if (Module.lpDirectDrawEnumerateExW == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawEnumerateExW = (LPDIRECTDRAWENUMERATEEXW)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_W_NAME);
+    if (Module.DirectDrawEnumerateExW == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpDirectDrawEnumerateW = (LPDIRECTDRAWENUMW)GetProcAddress(Module.hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_W_NAME);
-    if (Module.lpDirectDrawEnumerateW == NULL) { ReleaseModule(); return NULL; }
+    Module.DirectDrawEnumerateW = (LPDIRECTDRAWENUMW)GetProcAddress(Module.Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_W_NAME);
+    if (Module.DirectDrawEnumerateW == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpCanUnloadNow = (LPDLLCANUNLOADNOW)GetProcAddress(Module.hModule, DIRECT_DRAW_CAN_UNLOAD_NOW_NAME);
-    if (Module.lpCanUnloadNow == NULL) { ReleaseModule(); return NULL; }
+    Module.DllCanUnloadNow = (LPDLLCANUNLOADNOW)GetProcAddress(Module.Module, DIRECT_DRAW_DLL_CAN_UNLOAD_NOW_NAME);
+    if (Module.DllCanUnloadNow == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpGetClassObject = (LPGETCLASSOBJECT)GetProcAddress(Module.hModule, DIRECT_DRAW_GET_CLASS_OBJECT_NAME);
-    if (Module.lpGetClassObject == NULL) { ReleaseModule(); return NULL; }
+    Module.DllGetClassObject = (LPDLLGETCLASSOBJECT)GetProcAddress(Module.Module, DIRECT_DRAW_DLL_GET_CLASS_OBJECT_NAME);
+    if (Module.DllGetClassObject == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpGetDirectDrawSurfaceLocal = (LPGETDIRECTDRAWSURFACELOCAL)GetProcAddress(Module.hModule, DIRECT_DRAW_GET_DIRECT_DRAW_SURFACE_LOCAL_NAME);
-    if (Module.lpGetDirectDrawSurfaceLocal == NULL) { ReleaseModule(); return NULL; }
+    Module.GetDirectDrawSurfaceLocal = (LPGETDIRECTDRAWSURFACELOCAL)GetProcAddress(Module.Module, DIRECT_DRAW_GET_DIRECT_DRAW_SURFACE_LOCAL_NAME);
+    if (Module.GetDirectDrawSurfaceLocal == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpGetOLEThunkData = (LPGETOLETHUNKDATA)GetProcAddress(Module.hModule, DIRECT_DRAW_GET_OLE_THUNK_DATA_NAME);
-    if (Module.lpGetOLEThunkData == NULL) { ReleaseModule(); return NULL; }
+    Module.GetOLEThunkData = (LPGETOLETHUNKDATA)GetProcAddress(Module.Module, DIRECT_DRAW_GET_OLE_THUNK_DATA_NAME);
+    if (Module.GetOLEThunkData == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpGetSurfaceFromDeviceContext = (LPGETSURFACEFROMDEVICECONTEXT)GetProcAddress(Module.hModule, DIRECT_DRAW_GET_SURFACE_FROM_DEVICE_CONTEXT_NAME);
-    if (Module.lpGetSurfaceFromDeviceContext == NULL) { ReleaseModule(); return NULL; }
+    Module.GetSurfaceFromDeviceContext = (LPGETSURFACEFROMDEVICECONTEXT)GetProcAddress(Module.Module, DIRECT_DRAW_GET_SURFACE_FROM_DEVICE_CONTEXT_NAME);
+    if (Module.GetSurfaceFromDeviceContext == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpRegisterSpecialCase = (LPREGISTERSPECIALCASE)GetProcAddress(Module.hModule, DIRECT_DRAW_REGISTER_SPECIAL_CASE_NAME);
-    if (Module.lpRegisterSpecialCase == NULL) { ReleaseModule(); return NULL; }
+    Module.RegisterSpecialCase = (LPREGISTERSPECIALCASE)GetProcAddress(Module.Module, DIRECT_DRAW_REGISTER_SPECIAL_CASE_NAME);
+    if (Module.RegisterSpecialCase == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpReleaseThreadLock = (LPRELEASEDIRECTDRAWTHREADLOCK)GetProcAddress(Module.hModule, DIRECT_DRAW_RELEASE_DIRECT_DRAW_THREAD_LOCK_NAME);
-    if (Module.lpReleaseThreadLock == NULL) { ReleaseModule(); return NULL; }
+    Module.ReleaseThreadLock = (LPRELEASEDIRECTDRAWTHREADLOCK)GetProcAddress(Module.Module, DIRECT_DRAW_RELEASE_DIRECT_DRAW_THREAD_LOCK_NAME);
+    if (Module.ReleaseThreadLock == NULL) { ReleaseModule(); return NULL; }
 
-    Module.lpSetApplicationCompatibilityData = (LPSETAPPLICATIONCOMPATIBILITYDATA)GetProcAddress(Module.hModule, DIRECT_DRAW_SET_APPLICATION_COMPATIBILITY_DATA_NAME);
+    Module.SetApplicationCompatibilityData = (LPSETAPPLICATIONCOMPATIBILITYDATA)GetProcAddress(Module.Module, DIRECT_DRAW_SET_APPLICATION_COMPATIBILITY_DATA_NAME);
 
     Module.Assembler = new Assembler();
 
@@ -116,7 +116,7 @@ BOOL ReleaseModule()
 {
     delete Module.Assembler;
 
-    BOOL result = Module.hModule != NULL ? FreeLibrary(Module.hModule) : FALSE;
+    BOOL result = Module.Module != NULL ? FreeLibrary(Module.Module) : FALSE;
 
     ZeroMemory(&Module, sizeof(ModuleState));
 

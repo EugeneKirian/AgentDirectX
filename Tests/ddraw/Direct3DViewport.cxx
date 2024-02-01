@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawCreateViewport(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -120,7 +120,7 @@ VOID DirectDrawCreateViewport(LPMODULE module)
 VOID DirectDraw2CreateViewport(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -220,7 +220,7 @@ VOID DirectDraw2CreateViewport(LPMODULE module)
 VOID DirectDraw4CreateViewport(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -320,7 +320,7 @@ VOID DirectDraw4CreateViewport(LPMODULE module)
 VOID DirectDraw7CreateViewport(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW dd = NULL;
@@ -355,7 +355,7 @@ VOID DirectDraw7CreateViewport(LPMODULE module)
 VOID DirectDrawCreateViewportQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -504,7 +504,7 @@ VOID DirectDrawCreateViewportQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2CreateViewportQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -658,7 +658,7 @@ VOID DirectDraw2CreateViewportQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4CreateViewportQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1601,7 +1601,7 @@ VOID DirectDrawCreateViewport3Query(LPDIRECT3DVIEWPORT3 vp)
 VOID DirectDrawCreateViewportQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -1708,7 +1708,7 @@ VOID DirectDrawCreateViewportQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2CreateViewportQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -1820,7 +1820,7 @@ VOID DirectDraw2CreateViewportQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4CreateViewportQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;

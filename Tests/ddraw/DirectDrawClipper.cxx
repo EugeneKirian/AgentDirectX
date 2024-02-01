@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawClipperCreate(LPMODULE module)
 {
     LPDIRECTDRAWCLIPPER ddc = NULL;
-    HRESULT result = module->lpDirectDrawCreateClipper(0, &ddc, NULL);
+    HRESULT result = module->DirectDrawCreateClipper(0, &ddc, NULL);
     IsEqual(result, DD_OK);
 
     ddc->AddRef();
@@ -37,7 +37,7 @@ VOID DirectDrawClipperCreate(LPMODULE module)
 VOID DirectDrawCreateClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc = NULL;
@@ -61,7 +61,7 @@ VOID DirectDrawCreateClipper(LPMODULE module)
 VOID DirectDraw2CreateClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -97,7 +97,7 @@ VOID DirectDraw2CreateClipper(LPMODULE module)
 VOID DirectDraw4CreateClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -133,7 +133,7 @@ VOID DirectDraw4CreateClipper(LPMODULE module)
 VOID DirectDraw7CreateClipper(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc = NULL;
@@ -157,7 +157,7 @@ VOID DirectDraw7CreateClipper(LPMODULE module)
 VOID DirectDrawClipperQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc = NULL;
@@ -192,7 +192,7 @@ VOID DirectDrawClipperQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2ClipperQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -239,7 +239,7 @@ VOID DirectDraw2ClipperQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4ClipperQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -286,7 +286,7 @@ VOID DirectDraw4ClipperQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw7ClipperQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc = NULL;
@@ -321,7 +321,7 @@ VOID DirectDraw7ClipperQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDrawClipperQueryInterfaceClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc1 = NULL;
@@ -365,7 +365,7 @@ VOID DirectDrawClipperQueryInterfaceClipper(LPMODULE module)
 VOID DirectDraw2ClipperQueryInterfaceClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -421,7 +421,7 @@ VOID DirectDraw2ClipperQueryInterfaceClipper(LPMODULE module)
 VOID DirectDraw4ClipperQueryInterfaceClipper(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -477,7 +477,7 @@ VOID DirectDraw4ClipperQueryInterfaceClipper(LPMODULE module)
 VOID DirectDraw7ClipperQueryInterfaceClipper(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER ddc1 = NULL;
@@ -779,7 +779,7 @@ VOID DirectDrawClipperQuery(LPDIRECTDRAWCLIPPER clipper)
 VOID DirectDrawCreateClipperQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAWCLIPPER clipper = NULL;
-    HRESULT result = module->lpDirectDrawCreateClipper(NULL, &clipper, NULL);
+    HRESULT result = module->DirectDrawCreateClipper(NULL, &clipper, NULL);
 
     DirectDrawClipperQuery(clipper);
 
@@ -792,7 +792,7 @@ VOID DirectDrawCreateClipperQueryInterfaceAll(LPMODULE module)
 VOID DirectDrawClipperQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER clipper = NULL;
@@ -812,7 +812,7 @@ VOID DirectDrawClipperQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2ClipperQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -837,7 +837,7 @@ VOID DirectDraw2ClipperQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4ClipperQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -862,7 +862,7 @@ VOID DirectDraw4ClipperQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw7ClipperQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAWCLIPPER clipper = NULL;

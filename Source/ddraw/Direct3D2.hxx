@@ -22,7 +22,7 @@ SOFTWARE.
 
 #pragma once
 
-#include "Assembler.hxx"
+#include "Base.hxx"
 
 class Direct3D2 : public IDirect3D2
 {

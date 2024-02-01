@@ -22,13 +22,10 @@ SOFTWARE.
 
 #pragma once
 
-#define NOCRYPT
-#define NOMINMAX
-#define STRICT
-#define WIN32_MEAN_AND_LEAN
-
-#include <windows.h>
+#include <Base.hxx>
 #include <shlwapi.h>
+
+#include <Assembler.hxx>
 
 #define DIRECTDRAW_VERSION 0x0700
 #include <ddraw.h>

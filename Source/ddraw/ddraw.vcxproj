@@ -73,22 +73,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Bin\x32\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x32\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\SDK\DX70\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX70\Include;</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)Bin\x32\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x32\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\SDK\DX70\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX70\Include;</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\x64\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x64\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\SDK\DX70\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX70\Include;</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\x64\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x64\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\SDK\DX70\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX70\Include;</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -104,6 +104,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>28251</DisableSpecificWarnings>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -112,6 +113,7 @@
       <ModuleDefinitionFile>Module.def</ModuleDefinitionFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);shlwapi.lib</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4222 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,6 +132,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>28251</DisableSpecificWarnings>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,6 +143,7 @@
       <ModuleDefinitionFile>Module.def</ModuleDefinitionFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);shlwapi.lib</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4222 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -156,6 +160,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>28251</DisableSpecificWarnings>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -164,6 +169,7 @@
       <ModuleDefinitionFile>Module.def</ModuleDefinitionFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);shlwapi.lib</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4222 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -182,6 +188,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>28251</DisableSpecificWarnings>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -192,11 +199,10 @@
       <ModuleDefinitionFile>Module.def</ModuleDefinitionFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);shlwapi.lib</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4222 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Assembler.cxx" />
-    <ClCompile Include="AssemblerDelegate.cxx" />
     <ClCompile Include="Direct3D.cxx" />
     <ClCompile Include="Direct3D2.cxx" />
     <ClCompile Include="Direct3D3.cxx" />
@@ -237,8 +243,6 @@
     <ClCompile Include="Unknown.cxx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Array.hxx" />
-    <ClInclude Include="Assembler.hxx" />
     <ClInclude Include="Base.hxx" />
     <ClInclude Include="Direct3D.hxx" />
     <ClInclude Include="Direct3D2.hxx" />
@@ -288,6 +292,9 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\common\common.vcxproj">
+      <Project>{a2412060-91f8-4338-9ad1-937b7eeabdde}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\dxguid\dxguid.vcxproj">
       <Project>{6fef3366-146d-4fcf-addb-88618b774b74}</Project>
     </ProjectReference>

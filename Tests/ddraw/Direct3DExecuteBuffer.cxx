@@ -34,7 +34,7 @@ static HRESULT CALLBACK EnumDirect3DDevices(GUID FAR* lpGuid, LPSTR lpDeviceDesc
 VOID DirectDrawCreateDirect3DExecuteBuffer(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -103,7 +103,7 @@ VOID DirectDrawCreateDirect3DExecuteBuffer(LPMODULE module)
 VOID DirectDrawDirect3DExecuteBufferQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -439,7 +439,7 @@ VOID DirectDrawDirect3DExecuteBufferQuery(LPDIRECT3DEXECUTEBUFFER buffer)
 VOID DirectDrawDirect3DExecuteBufferQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();

@@ -27,7 +27,7 @@ SOFTWARE.
 VOID DirectDrawCreatePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -63,7 +63,7 @@ VOID DirectDrawCreatePalette(LPMODULE module)
 VOID DirectDraw2CreatePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -111,7 +111,7 @@ VOID DirectDraw2CreatePalette(LPMODULE module)
 VOID DirectDraw4CreatePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -159,7 +159,7 @@ VOID DirectDraw4CreatePalette(LPMODULE module)
 VOID DirectDraw7CreatePalette(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -195,7 +195,7 @@ VOID DirectDraw7CreatePalette(LPMODULE module)
 VOID DirectDrawPaletteQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -241,7 +241,7 @@ VOID DirectDrawPaletteQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2PaletteQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -299,7 +299,7 @@ VOID DirectDraw2PaletteQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4PaletteQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -357,7 +357,7 @@ VOID DirectDraw4PaletteQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw7PaletteQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -403,7 +403,7 @@ VOID DirectDraw7PaletteQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDrawPaletteQueryInterfacePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -457,7 +457,7 @@ VOID DirectDrawPaletteQueryInterfacePalette(LPMODULE module)
 VOID DirectDraw2PaletteQueryInterfacePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -523,7 +523,7 @@ VOID DirectDraw2PaletteQueryInterfacePalette(LPMODULE module)
 VOID DirectDraw4PaletteQueryInterfacePalette(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -589,7 +589,7 @@ VOID DirectDraw4PaletteQueryInterfacePalette(LPMODULE module)
 VOID DirectDraw7PaletteQueryInterfacePalette(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -901,7 +901,7 @@ VOID DirectDrawPaletteQuery(LPDIRECTDRAWPALETTE palette)
 VOID DirectDrawPaletteQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -939,7 +939,7 @@ VOID DirectDrawPaletteQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2PaletteQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -989,7 +989,7 @@ VOID DirectDraw2PaletteQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4PaletteQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1039,7 +1039,7 @@ VOID DirectDraw4PaletteQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw7PaletteQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();

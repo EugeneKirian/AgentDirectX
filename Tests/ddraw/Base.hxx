@@ -36,7 +36,6 @@ SOFTWARE.
 #define DIRECT3D_VERSION 0x0700
 #include <d3d.h>
 
-#define ADDDR(x) ((uintptr_t)*(uintptr_t*)x)
 #define DIRECTRELEASE(x) if (x != NULL) { x->Release(); x = NULL; }
 
 #define IsEqual(a, b) if (a != b) { DebugBreak(); }

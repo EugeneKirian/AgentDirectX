@@ -18,9 +18,22 @@ AgentDirectX consists of DirectX wrappers for the following:
 	* [ ] DirectMusic
 	* [ ] DirectPlay
 	* [ ] DirectSetup
-	* [ ] DirectSound
+	* [x] DirectSound
 * [ ] DirectX 8
+	* [ ] Direct3D
+	* [ ] DirectInput
+	* [ ] DirectMusic
+	* [ ] DirectPlay
+	* [ ] DirectSetup
+	* [ ] DirectShow
+	* [x] DirectSound
 * [ ] DirectX 9
+	* [ ] Direct3D
+	* [ ] DirectInput
+	* [ ] DirectSetup
+	* [x] DirectSound
+	* [ ] XAudio2
+	* [ ] XInput
 
 ### Requirements & Dependencies
 Development Environment:
@@ -28,9 +41,14 @@ Development Environment:
 
 DirectX SDKs:
 1. [Microsoft DirectX 7.0 SDK](https://archive.org/details/dx7sdk-7001)
+2. [Microsoft DirectX 8.1 SDK](https://archive.org/details/dx81sdk_full)
+3. [Microsoft DirectX SDK 9.0 (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812)
 
 Other:
 1. [DXGUID](https://github.com/EugeneKirian/DXGUID)
 
+### Code Style & Compatibility
+The code written in a way to contain the minimum of external dependencies, and to compile with Microsoft Visual Studio 6.0 C/C++ Compiler for legacy compatibility with Microsoft Windows XP. The repository has the corresponding projects to compile for the old platforms.
+
 ### Legal
-DirectX, Direct3D, DirectDraw, and others are trademarks of their respective owners.
+DirectX, Direct3D, DirectDraw, DirectSound, and others are trademarks of their respective owners.

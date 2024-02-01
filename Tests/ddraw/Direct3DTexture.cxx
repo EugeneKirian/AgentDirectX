@@ -27,7 +27,7 @@ SOFTWARE.
 VOID DirectDrawCreateSurfaceTexture(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -176,7 +176,7 @@ VOID DirectDrawCreateSurfaceTexture(LPMODULE module)
 VOID DirectDraw2CreateSurfaceTexture(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -329,7 +329,7 @@ VOID DirectDraw2CreateSurfaceTexture(LPMODULE module)
 VOID DirectDraw4CreateSurfaceTexture(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -482,7 +482,7 @@ VOID DirectDraw4CreateSurfaceTexture(LPMODULE module)
 VOID DirectDraw7CreateSurfaceTexture(LPMODULE module)
 {
     LPDIRECTDRAW7 dd = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -586,7 +586,7 @@ VOID DirectDraw7CreateSurfaceTexture(LPMODULE module)
 VOID DirectDrawSurfaceTextureQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -820,7 +820,7 @@ VOID DirectDrawSurfaceTextureQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2SurfaceTextureQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -1058,7 +1058,7 @@ VOID DirectDraw2SurfaceTextureQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4SurfaceTextureQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1830,7 +1830,7 @@ VOID DirectDrawSurfaceTextureQuery(LPDIRECT3DTEXTURE2 tex)
 VOID DirectDrawSurfaceTextureQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -1994,7 +1994,7 @@ VOID DirectDrawSurfaceTextureQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2SurfaceTextureQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -2162,7 +2162,7 @@ VOID DirectDraw2SurfaceTextureQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4SurfaceTextureQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;

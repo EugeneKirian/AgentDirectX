@@ -34,7 +34,7 @@ static HRESULT CALLBACK EnumDirect3DDevices(GUID FAR* lpGuid, LPSTR lpDeviceDesc
 VOID DirectDrawCreateDirect3DDevice(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -255,7 +255,7 @@ VOID DirectDrawCreateDirect3DDevice(LPMODULE module)
 VOID DirectDraw2CreateDirect3DDevice(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -473,7 +473,7 @@ VOID DirectDraw2CreateDirect3DDevice(LPMODULE module)
 VOID DirectDraw4CreateDirect3DDevice(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -684,7 +684,7 @@ VOID DirectDraw4CreateDirect3DDevice(LPMODULE module)
 VOID DirectDraw7CreateDirect3DDevice(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -779,7 +779,7 @@ VOID DirectDraw7CreateDirect3DDevice(LPMODULE module)
 VOID DirectDrawDirect3DDeviceQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -1042,7 +1042,7 @@ VOID DirectDrawDirect3DDeviceQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2Direct3DDeviceQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -1310,7 +1310,7 @@ VOID DirectDraw2Direct3DDeviceQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4Direct3DDeviceQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1856,7 +1856,7 @@ VOID DirectDrawDirect3DDeviceQuery(LPDIRECT3DDEVICE device)
 VOID DirectDrawDirect3DDeviceQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -2074,7 +2074,7 @@ VOID DirectDrawDirect3DDeviceQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2Direct3DDeviceQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -2297,7 +2297,7 @@ VOID DirectDraw2Direct3DDeviceQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4Direct3DDeviceQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -2789,7 +2789,7 @@ VOID DirectDrawDirect3DDeviceUnknownQuery(LPUNKNOWN device)
 VOID DirectDrawDirect3DDeviceUnknownQueryAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();

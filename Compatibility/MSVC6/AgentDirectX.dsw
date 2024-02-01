@@ -3,6 +3,18 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 
 ###############################################################################
 
+Project: "common"=.\common\common.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "ddraw"=.\ddraw\ddraw.dsp - Package Owner=<4>
 
 Package=<5>
@@ -13,6 +25,27 @@ Package=<4>
 {{{
     Begin Project Dependency
     Project_Dep_Name dxguid
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name common
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dsound"=.\dsound\dsound.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dxguid
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name common
     End Project Dependency
 }}}
 

@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawCreate(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    const HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    const HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     dd->AddRef();
@@ -37,7 +37,7 @@ VOID DirectDrawCreate(LPMODULE module)
 VOID DirectDrawQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPUNKNOWN unk1 = NULL;
@@ -77,7 +77,7 @@ VOID DirectDrawQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDrawQueryInterfaceIUnknownIDirectDraw(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPUNKNOWN unk = NULL;
@@ -117,7 +117,7 @@ VOID DirectDrawQueryInterfaceIUnknownIDirectDraw(LPMODULE module)
 VOID DirectDrawQueryInterfaceIDirectDraw(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW dd1 = NULL;
@@ -163,7 +163,7 @@ VOID DirectDrawQueryInterfaceIDirectDraw(LPMODULE module)
 VOID DirectDrawQueryInterfaceIDirectDraw2(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd1 = NULL;
@@ -209,7 +209,7 @@ VOID DirectDrawQueryInterfaceIDirectDraw2(LPMODULE module)
 VOID DirectDrawQueryInterfaceIDirectDraw4(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd1 = NULL;
@@ -255,7 +255,7 @@ VOID DirectDrawQueryInterfaceIDirectDraw4(LPMODULE module)
 VOID DirectDrawQueryInterfaceIDirectDraw7(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW7 dd71 = NULL;
@@ -301,7 +301,7 @@ VOID DirectDrawQueryInterfaceIDirectDraw7(LPMODULE module)
 VOID DirectDrawQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     /* Direct3D */

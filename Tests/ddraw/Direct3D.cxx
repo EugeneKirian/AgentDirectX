@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawDirect3D(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -67,7 +67,7 @@ VOID DirectDrawDirect3D(LPMODULE module)
 VOID DirectDraw2Direct3D(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -116,7 +116,7 @@ VOID DirectDraw2Direct3D(LPMODULE module)
 VOID DirectDraw4Direct3D(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -165,7 +165,7 @@ VOID DirectDraw4Direct3D(LPMODULE module)
 VOID DirectDraw7Direct3D(LPMODULE module)
 {
     LPDIRECTDRAW7 dd = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -200,7 +200,7 @@ VOID DirectDraw7Direct3D(LPMODULE module)
 VOID DirectDrawDirect3DQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -272,7 +272,7 @@ VOID DirectDrawDirect3DQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2Direct3DQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -349,7 +349,7 @@ VOID DirectDraw2Direct3DQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4Direct3DQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -426,7 +426,7 @@ VOID DirectDraw4Direct3DQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw7Direct3DQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D3 d3d7 = NULL;
@@ -721,7 +721,7 @@ VOID DirectDrawDirect3DQuery(LPDIRECT3D d3d)
 VOID DirectDrawDirect3DQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d = NULL;
@@ -743,7 +743,7 @@ VOID DirectDrawDirect3DQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2Direct3DQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -770,7 +770,7 @@ VOID DirectDraw2Direct3DQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4Direct3DQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -797,7 +797,7 @@ VOID DirectDraw4Direct3DQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw7Direct3DQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW7 dd = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d = NULL;

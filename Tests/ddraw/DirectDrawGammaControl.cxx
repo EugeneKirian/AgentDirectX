@@ -27,7 +27,7 @@ SOFTWARE.
 VOID DirectDrawCreateGammaControl(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -161,7 +161,7 @@ VOID DirectDrawCreateGammaControl(LPMODULE module)
 VOID DirectDraw2CreateGammaControl(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -299,7 +299,7 @@ VOID DirectDraw2CreateGammaControl(LPMODULE module)
 VOID DirectDraw4CreateGammaControl(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -437,7 +437,7 @@ VOID DirectDraw4CreateGammaControl(LPMODULE module)
 VOID DirectDraw7CreateGammaControl(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -576,7 +576,7 @@ VOID DirectDraw7CreateGammaControl(LPMODULE module)
 VOID DirectDrawGammaControlQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -630,7 +630,7 @@ VOID DirectDrawGammaControlQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2GammaControlQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -689,7 +689,7 @@ VOID DirectDraw2GammaControlQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4GammaControlQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -755,7 +755,7 @@ VOID DirectDraw4GammaControlQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw7GammaControlQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW7 dd = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -1102,7 +1102,7 @@ VOID DirectDrawGammaControlQuery(LPDIRECTDRAWGAMMACONTROL gamma, const BOOL seve
 VOID DirectDrawGammaControlQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();
@@ -1153,7 +1153,7 @@ VOID DirectDrawGammaControlQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2GammaControlQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -1209,7 +1209,7 @@ VOID DirectDraw2GammaControlQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4GammaControlQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1265,7 +1265,7 @@ VOID DirectDraw4GammaControlQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw7GammaControlQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW7 dd = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     HWND hwnd = InitializeWindow();

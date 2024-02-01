@@ -26,83 +26,83 @@ LPMODULE InitializeModule(LPCSTR path)
 {
     LPMODULE result = new MODULE();
 
-    result->hModule = LoadLibraryA(path);
+    result->Module = LoadLibraryA(path);
 
-    if (result->hModule == NULL) { return FALSE; }
+    if (result->Module == NULL) { return FALSE; }
 
-    result->lpAcquireInternalLock = (LPACQUIREDIRECTDRAWTHREADLOCK)GetProcAddress(result->hModule, DIRECT_DRAW_ACQUIRE_DIRECT_DRAW_THREAD_LOCK_NAME);
-    if (result->lpAcquireInternalLock == NULL) { ReleaseModule(result); return NULL; }
+    result->AcquireInternalLock = (LPACQUIREDIRECTDRAWTHREADLOCK)GetProcAddress(result->Module, DIRECT_DRAW_ACQUIRE_DIRECT_DRAW_THREAD_LOCK_NAME);
+    if (result->AcquireInternalLock == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpCompleteCreateSysmemSurface = (LPCOMPLETECREATESYSTEMMEMORYSURFACE)GetProcAddress(result->hModule, DIRECT_DRAW_COMPLETE_CREATE_SYSTEM_MEMORY_SURFACE_NAME);
-    if (result->lpCompleteCreateSysmemSurface == NULL) { ReleaseModule(result); return NULL; }
+    result->CompleteCreateSysmemSurface = (LPCOMPLETECREATESYSTEMMEMORYSURFACE)GetProcAddress(result->Module, DIRECT_DRAW_COMPLETE_CREATE_SYSTEM_MEMORY_SURFACE_NAME);
+    if (result->CompleteCreateSysmemSurface == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpParseUnknownCommand = (LPDIRECT3DPARSEUNKNOWNCOMMAND)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_3D_PARSE_UNKNOWN_COMMAND_NAME);
-    if (result->lpParseUnknownCommand == NULL) { ReleaseModule(result); return NULL; }
+    result->ParseUnknownCommand = (LPDIRECT3DPARSEUNKNOWNCOMMAND)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_3D_PARSE_UNKNOWN_COMMAND_NAME);
+    if (result->ParseUnknownCommand == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpGetAttachedSurfaceLocal = (LPDIRECTDRAWGETATTACHEDSURFACELOCAL)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_GET_ATTACHED_SURFACE_LOCAL_NAME);
-    if (result->lpGetAttachedSurfaceLocal == NULL) { ReleaseModule(result); return NULL; }
+    result->GetAttachedSurfaceLocal = (LPDIRECTDRAWGETATTACHEDSURFACELOCAL)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_GET_ATTACHED_SURFACE_LOCAL_NAME);
+    if (result->GetAttachedSurfaceLocal == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpInternalLock = (LPDIRECTDRAWINTERNALLOCK)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_INTERNAL_LOCK_NAME);
-    if (result->lpInternalLock == NULL) { ReleaseModule(result); return NULL; }
+    result->InternalLock = (LPDIRECTDRAWINTERNALLOCK)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_INTERNAL_LOCK_NAME);
+    if (result->InternalLock == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpInternalUnlock = (LPDIRECTDRAWINTERNALUNLOCK)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_INTERAL_UNLOCK_NAME);
-    if (result->lpInternalUnlock == NULL) { ReleaseModule(result); return NULL; }
+    result->InternalUnlock = (LPDIRECTDRAWINTERNALUNLOCK)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_INTERAL_UNLOCK_NAME);
+    if (result->InternalUnlock == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectSoundHelp = (LPDIRECTSOUNDHELP)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_SOUND_HELP_NAME);
-    if (result->lpDirectSoundHelp == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectSoundHelp = (LPDIRECTSOUNDHELP)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_SOUND_HELP_NAME);
+    if (result->DirectSoundHelp == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawCreate = (LPDIRECTDRAWCREATE)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_NAME);
-    if (result->lpDirectDrawCreate == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawCreate = (LPDIRECTDRAWCREATE)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_NAME);
+    if (result->DirectDrawCreate == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawCreateClipper = (LPDIRECTDRAWCREATECLIPPER)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_CLIPPER_NAME);
-    if (result->lpDirectDrawCreateClipper == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawCreateClipper = (LPDIRECTDRAWCREATECLIPPER)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_CLIPPER_NAME);
+    if (result->DirectDrawCreateClipper == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawCreateEx = (LPDIRECTDRAWCREATEEX)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_CREATE_EX_NAME);
-    if (result->lpDirectDrawCreateEx == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawCreateEx = (LPDIRECTDRAWCREATEEX)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_CREATE_EX_NAME);
+    if (result->DirectDrawCreateEx == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawEnumerateA = (LPDIRECTDRAWENUMA)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_A_NAME);
-    if (result->lpDirectDrawEnumerateA == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawEnumerateA = (LPDIRECTDRAWENUMA)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_A_NAME);
+    if (result->DirectDrawEnumerateA == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawEnumerateExA = (LPDIRECTDRAWENUMERATEEXA)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_A_NAME);
-    if (result->lpDirectDrawEnumerateExA == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawEnumerateExA = (LPDIRECTDRAWENUMERATEEXA)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_A_NAME);
+    if (result->DirectDrawEnumerateExA == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawEnumerateExW = (LPDIRECTDRAWENUMERATEEXW)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_W_NAME);
-    if (result->lpDirectDrawEnumerateExW == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawEnumerateExW = (LPDIRECTDRAWENUMERATEEXW)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_EX_W_NAME);
+    if (result->DirectDrawEnumerateExW == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpDirectDrawEnumerateW = (LPDIRECTDRAWENUMW)GetProcAddress(result->hModule, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_W_NAME);
-    if (result->lpDirectDrawEnumerateW == NULL) { ReleaseModule(result); return NULL; }
+    result->DirectDrawEnumerateW = (LPDIRECTDRAWENUMW)GetProcAddress(result->Module, DIRECT_DRAW_DIRECT_DRAW_ENUMERATE_W_NAME);
+    if (result->DirectDrawEnumerateW == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpCanUnloadNow = (LPDLLCANUNLOADNOW)GetProcAddress(result->hModule, DIRECT_DRAW_CAN_UNLOAD_NOW_NAME);
-    if (result->lpCanUnloadNow == NULL) { ReleaseModule(result); return NULL; }
+    result->DllCanUnloadNow = (LPDLLCANUNLOADNOW)GetProcAddress(result->Module, DIRECT_DRAW_CAN_UNLOAD_NOW_NAME);
+    if (result->DllCanUnloadNow == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpGetClassObject = (LPGETCLASSOBJECT)GetProcAddress(result->hModule, DIRECT_DRAW_GET_CLASS_OBJECT_NAME);
-    if (result->lpGetClassObject == NULL) { ReleaseModule(result); return NULL; }
+    result->DllGetClassObject = (LPDLLGETCLASSOBJECT)GetProcAddress(result->Module, DIRECT_DRAW_GET_CLASS_OBJECT_NAME);
+    if (result->DllGetClassObject == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpGetDirectDrawSurfaceLocal = (LPGETDIRECTDRAWSURFACELOCAL)GetProcAddress(result->hModule, DIRECT_DRAW_GET_DIRECT_DRAW_SURFACE_LOCAL_NAME);
-    if (result->lpGetDirectDrawSurfaceLocal == NULL) { ReleaseModule(result); return NULL; }
+    result->GetDirectDrawSurfaceLocal = (LPGETDIRECTDRAWSURFACELOCAL)GetProcAddress(result->Module, DIRECT_DRAW_GET_DIRECT_DRAW_SURFACE_LOCAL_NAME);
+    if (result->GetDirectDrawSurfaceLocal == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpGetOLEThunkData = (LPGETOLETHUNKDATA)GetProcAddress(result->hModule, DIRECT_DRAW_GET_OLE_THUNK_DATA_NAME);
-    if (result->lpGetOLEThunkData == NULL) { ReleaseModule(result); return NULL; }
+    result->GetOLEThunkData = (LPGETOLETHUNKDATA)GetProcAddress(result->Module, DIRECT_DRAW_GET_OLE_THUNK_DATA_NAME);
+    if (result->GetOLEThunkData == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpGetSurfaceFromDeviceContext = (LPGETSURFACEFROMDEVICECONTEXT)GetProcAddress(result->hModule, DIRECT_DRAW_GET_SURFACE_FROM_DEVICE_CONTEXT_NAME);
-    if (result->lpGetSurfaceFromDeviceContext == NULL) { ReleaseModule(result); return NULL; }
+    result->GetSurfaceFromDeviceContext = (LPGETSURFACEFROMDEVICECONTEXT)GetProcAddress(result->Module, DIRECT_DRAW_GET_SURFACE_FROM_DEVICE_CONTEXT_NAME);
+    if (result->GetSurfaceFromDeviceContext == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpRegisterSpecialCase = (LPREGISTERSPECIALCASE)GetProcAddress(result->hModule, DIRECT_DRAW_REGISTER_SPECIAL_CASE_NAME);
-    if (result->lpRegisterSpecialCase == NULL) { ReleaseModule(result); return NULL; }
+    result->RegisterSpecialCase = (LPREGISTERSPECIALCASE)GetProcAddress(result->Module, DIRECT_DRAW_REGISTER_SPECIAL_CASE_NAME);
+    if (result->RegisterSpecialCase == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpReleaseThreadLock = (LPRELEASEDIRECTDRAWTHREADLOCK)GetProcAddress(result->hModule, DIRECT_DRAW_RELEASE_DIRECT_DRAW_THREAD_LOCK_NAME);
-    if (result->lpReleaseThreadLock == NULL) { ReleaseModule(result); return NULL; }
+    result->ReleaseThreadLock = (LPRELEASEDIRECTDRAWTHREADLOCK)GetProcAddress(result->Module, DIRECT_DRAW_RELEASE_DIRECT_DRAW_THREAD_LOCK_NAME);
+    if (result->ReleaseThreadLock == NULL) { ReleaseModule(result); return NULL; }
 
-    result->lpSetApplicationCompatibilityData = (LPSETAPPLICATIONCOMPATIBILITYDATA)GetProcAddress(result->hModule, DIRECT_DRAW_SET_APPLICATION_COMPATIBILITY_DATA_NAME);
+    result->SetApplicationCompatibilityData = (LPSETAPPLICATIONCOMPATIBILITYDATA)GetProcAddress(result->Module, DIRECT_DRAW_SET_APPLICATION_COMPATIBILITY_DATA_NAME);
 
     return result;
 }
 
 BOOL ReleaseModule(LPMODULE module)
 {
-    if (module == NULL || module->hModule == NULL) { return FALSE; }
+    if (module == NULL || module->Module == NULL) { return FALSE; }
 
-    FreeLibrary(module->hModule);
+    FreeLibrary(module->Module);
 
     delete module;
 

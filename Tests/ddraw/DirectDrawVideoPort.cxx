@@ -32,7 +32,7 @@ HRESULT WINAPI EnumVideoCallback(LPDDVIDEOPORTCAPS lpDDVideoPortCaps, LPVOID lpC
 VOID DirectDrawCreateVideoPort(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;
@@ -73,7 +73,7 @@ VOID DirectDrawCreateVideoPort(LPMODULE module)
 VOID DirectDraw2CreateVideoPort(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -126,7 +126,7 @@ VOID DirectDraw2CreateVideoPort(LPMODULE module)
 VOID DirectDraw4CreateVideoPort(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -179,7 +179,7 @@ VOID DirectDraw4CreateVideoPort(LPMODULE module)
 VOID DirectDraw7CreateVideoPort(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;

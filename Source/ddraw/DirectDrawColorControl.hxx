@@ -22,7 +22,7 @@ SOFTWARE.
 
 #pragma once
 
-#include "Assembler.hxx"
+#include "Base.hxx"
 
 class DirectDrawColorControl : public IDirectDrawColorControl
 {
@@ -32,9 +32,9 @@ public:
 
     /*** IUnknown ***/
 
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR* ppvObj);
-    STDMETHOD_(ULONG, AddRef) (THIS);
-    STDMETHOD_(ULONG, Release) (THIS);
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, LPVOID FAR* ppvObj);
+    STDMETHOD_(ULONG, AddRef)(THIS);
+    STDMETHOD_(ULONG, Release)(THIS);
 
     /*** IDirectDrawColorControl ***/
 

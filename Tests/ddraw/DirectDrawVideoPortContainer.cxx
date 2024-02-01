@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawCreateVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;
@@ -49,7 +49,7 @@ VOID DirectDrawCreateVideoPortContainer(LPMODULE module)
 VOID DirectDraw2CreateVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -82,7 +82,7 @@ VOID DirectDraw2CreateVideoPortContainer(LPMODULE module)
 VOID DirectDraw4CreateVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -115,7 +115,7 @@ VOID DirectDraw4CreateVideoPortContainer(LPMODULE module)
 VOID DirectDraw7CreateVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;
@@ -139,7 +139,7 @@ VOID DirectDraw7CreateVideoPortContainer(LPMODULE module)
 VOID DirectDrawVideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;
@@ -171,7 +171,7 @@ VOID DirectDrawVideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -212,7 +212,7 @@ VOID DirectDraw2VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -253,7 +253,7 @@ VOID DirectDraw4VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw7VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW dd1 = NULL;
@@ -295,7 +295,7 @@ VOID DirectDraw7VideoPortContainerQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDrawVideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc1 = NULL;
@@ -337,7 +337,7 @@ VOID DirectDrawVideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE modul
 VOID DirectDraw2VideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -388,7 +388,7 @@ VOID DirectDraw2VideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE modu
 VOID DirectDraw4VideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -439,7 +439,7 @@ VOID DirectDraw4VideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE modu
 VOID DirectDraw7VideoPortContainerQueryInterfaceVideoPortContainer(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW dd1 = NULL;
@@ -793,7 +793,7 @@ VOID DirectDrawVideoPortContainerQuery(LPDDVIDEOPORTCONTAINER container, const B
 VOID DirectDrawVideoPortContainerQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;
@@ -816,7 +816,7 @@ VOID DirectDrawVideoPortContainerQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2VideoPortContainerQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -848,7 +848,7 @@ VOID DirectDraw2VideoPortContainerQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4VideoPortContainerQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd1 = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd1, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd1, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -880,7 +880,7 @@ VOID DirectDraw4VideoPortContainerQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw7VideoPortContainerQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDDVIDEOPORTCONTAINER vpc = NULL;

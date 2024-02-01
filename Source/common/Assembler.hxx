@@ -130,13 +130,13 @@ inline TT Assemble(LPASSEMBLER assembler, LPASSEMBLERDELEGATE delegate, REFIID r
     return delegate->IsAgent(value, riid) ? (TT)delegate->Agent(value, riid) : (new T(assembler, delegate, riid, (TT)value));
 }
 
-#define AssembleAgent(T, A, D, V) ((I##T*)(Assemble<T, I##T*>(A, D, IID_I##T, (I##T*)V)))
+#define AssembleAgent(T, A, D, V)((I##T*)(Assemble<T, I##T*>(A, D, IID_I##T, (I##T*)V)))
 
-#define AcquireAgent(ID, V) (this->State.Delegate->Agent(*V, ID, V))
+#define AcquireAgent(ID, V)(this->State.Delegate->Agent(*V, ID, V))
 #define ActivateAgent(T, V) AssembleAgent(T, this->State.Assembler, this->State.Delegate, V);
 #define ActivateAgentDelegate(T, V) AssembleAgent(T, this->State.Assembler, (new AssemblerDelegate(this->State.Assembler)), V);
 
-#define AccessAgentValue(T, V) ((I##T*)this->State.Assembler->Value(V, IID_I##T))
+#define AccessAgentValue(T, V)((I##T*)this->State.Assembler->Value(V, IID_I##T))
 #define AttemptAccessAgentValue(T, V) if (this->State.Assembler->IsAgent(V, IID_I##T)) { V = AccessAgentValue(T, V); }
 
 #define AgentConstructorParameters(T)   \

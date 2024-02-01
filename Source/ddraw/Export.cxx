@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "Assembler.hxx"
+#include "Base.hxx"
 
 #include "DirectDraw.hxx"
 #include "DirectDraw7.hxx"
@@ -83,43 +83,43 @@ static BOOL CALLBACK DirectDrawEnumerateCallbackW(GUID* lpGUID, LPWSTR lpDriverD
 
 extern "C" VOID WINAPI AcquireDDThreadLock()
 {
-    Module.lpAcquireInternalLock();
+    Module.AcquireInternalLock();
 }
 
 extern "C" BOOL WINAPI CompleteCreateSysmemSurface(LPDDRAWI_DDRAWSURFACE_LCL lpSurfLcl)
 {
-    return Module.lpCompleteCreateSysmemSurface(lpSurfLcl);
+    return Module.CompleteCreateSysmemSurface(lpSurfLcl);
 }
 
 extern "C" HRESULT WINAPI D3DParseUnknownCommand(LPVOID lpvCommands, LPVOID * lplpvReturnedCommand)
 {
-    return Module.lpParseUnknownCommand(lpvCommands, lplpvReturnedCommand);
+    return Module.ParseUnknownCommand(lpvCommands, lplpvReturnedCommand);
 }
 
 extern "C" HRESULT WINAPI DDGetAttachedSurfaceLcl(LPDDRAWI_DDRAWSURFACE_LCL this_lcl, LPDDSCAPS2 lpDDSCaps, LPDDRAWI_DDRAWSURFACE_LCL * lplpDDAttachedSurfaceLcl)
 {
-    return Module.lpGetAttachedSurfaceLocal(this_lcl, lpDDSCaps, lplpDDAttachedSurfaceLcl);
+    return Module.GetAttachedSurfaceLocal(this_lcl, lpDDSCaps, lplpDDAttachedSurfaceLcl);
 }
 
 extern "C" HRESULT WINAPI DDInternalLock(LPDDRAWI_DDRAWSURFACE_LCL this_lcl, LPVOID * lpBits)
 {
-    return Module.lpInternalLock(this_lcl, lpBits);
+    return Module.InternalLock(this_lcl, lpBits);
 }
 
 extern "C" HRESULT WINAPI DDInternalUnlock(LPDDRAWI_DDRAWSURFACE_LCL this_lcl)
 {
-    return Module.lpInternalUnlock(this_lcl);
+    return Module.InternalUnlock(this_lcl);
 }
 
 extern "C" HRESULT WINAPI DSoundHelp(HWND hWnd, WNDPROC lpWndProc, DWORD pid)
 {
-    return Module.lpDirectSoundHelp(hWnd, lpWndProc, pid);
+    return Module.DirectSoundHelp(hWnd, lpWndProc, pid);
 }
 
 // Creates an instance of a DirectDraw object.
 extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.lpDirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
+    const HRESULT result = Module.DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDD = AssembleAgent(DirectDraw, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDD); }
 
@@ -129,7 +129,7 @@ extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD,
 // Creates an instance of a DirectDrawClipper object not associated with a DirectDraw object.
 extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER * lplpDDClipper, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.lpDirectDrawCreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
+    const HRESULT result = Module.DirectDrawCreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDClipper = AssembleAgent(DirectDrawClipper, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDDClipper); }
 
@@ -139,7 +139,7 @@ extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLI
 // Creates an instance of a DirectDraw object that supports the set of Direct3D interfaces in DirectX 7.0.
 extern "C" HRESULT WINAPI DirectDrawCreateEx(GUID * lpGuid, LPVOID * lplpDD, REFIID iid, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.lpDirectDrawCreateEx(lpGuid, lplpDD, iid, pUnkOuter);
+    const HRESULT result = Module.DirectDrawCreateEx(lpGuid, lplpDD, iid, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDD = AssembleAgent(DirectDraw7, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDD); }
 
@@ -158,7 +158,7 @@ extern "C" HRESULT WINAPI DirectDrawEnumerateA(LPDDENUMCALLBACKA lpCallback, LPV
     context.lpCallback = lpCallback;
     context.lpContext = lpContext;
 
-    return Module.lpDirectDrawEnumerateA(DirectDrawEnumerateCallbackA, &context);
+    return Module.DirectDrawEnumerateA(DirectDrawEnumerateCallbackA, &context);
 }
 
 // Enumerates all DirectDraw devices installed on the system.
@@ -172,7 +172,7 @@ extern "C" HRESULT WINAPI DirectDrawEnumerateExA(LPDDENUMCALLBACKEXA lpCallback,
     context.lpCallback = lpCallback;
     context.lpContext = lpContext;
 
-    return Module.lpDirectDrawEnumerateExA(DirectDrawEnumerateExCallbackA, &context, dwFlags);
+    return Module.DirectDrawEnumerateExA(DirectDrawEnumerateExCallbackA, &context, dwFlags);
 }
 
 // Enumerates all DirectDraw devices installed on the system.
@@ -186,7 +186,7 @@ extern "C" HRESULT WINAPI DirectDrawEnumerateExW(LPDDENUMCALLBACKEXW lpCallback,
     context.lpCallback = lpCallback;
     context.lpContext = lpContext;
 
-    return Module.lpDirectDrawEnumerateExW(DirectDrawEnumerateExCallbackW, &context, dwFlags);
+    return Module.DirectDrawEnumerateExW(DirectDrawEnumerateExCallbackW, &context, dwFlags);
 }
 
 // Enumerates the primary DirectDraw display device and a non-display device
@@ -201,47 +201,47 @@ extern "C" HRESULT WINAPI DirectDrawEnumerateW(LPDDENUMCALLBACKW lpCallback, LPV
     context.lpCallback = lpCallback;
     context.lpContext = lpContext;
 
-    return Module.lpDirectDrawEnumerateW(DirectDrawEnumerateCallbackW, &context);
+    return Module.DirectDrawEnumerateW(DirectDrawEnumerateCallbackW, &context);
 }
 
 extern "C" HRESULT WINAPI DllCanUnloadNow()
 {
-    return Module.lpCanUnloadNow();
+    return Module.DllCanUnloadNow();
 }
 
 extern "C" HRESULT WINAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID * ppv)
 {
-    return Module.lpGetClassObject(rclsid, riid, ppv);
+    return Module.DllGetClassObject(rclsid, riid, ppv);
 }
 
 extern "C" LPDDRAWI_DDRAWSURFACE_LCL WINAPI GetDDSurfaceLocal(LPDDRAWI_DIRECTDRAW_LCL this_lcl, DWORD handle, BOOL * isnew)
 {
-    return Module.lpGetDirectDrawSurfaceLocal(this_lcl, handle, isnew);
+    return Module.GetDirectDrawSurfaceLocal(this_lcl, handle, isnew);
 }
 
 extern "C" ULONG_PTR WINAPI GetOLEThunkData(ULONG_PTR dwOrdinal)
 {
-    return Module.lpGetOLEThunkData(dwOrdinal);
+    return Module.GetOLEThunkData(dwOrdinal);
 }
 
 extern "C" HRESULT WINAPI GetSurfaceFromDC(HDC hDC, LPDIRECTDRAWSURFACE * ppdds, HDC * phdcDriver)
 {
-    return Module.lpGetSurfaceFromDeviceContext(hDC, ppdds, phdcDriver);
+    return Module.GetSurfaceFromDeviceContext(hDC, ppdds, phdcDriver);
 }
 
 extern "C" HRESULT WINAPI RegisterSpecialCase(DWORD dwParam1, DWORD dwParam2, DWORD dwParam3, DWORD dwParam4)
 {
-    return Module.lpRegisterSpecialCase(dwParam1, dwParam2, dwParam3, dwParam4);
+    return Module.RegisterSpecialCase(dwParam1, dwParam2, dwParam3, dwParam4);
 }
 
 extern "C" VOID WINAPI ReleaseDDThreadLock()
 {
-    Module.lpReleaseThreadLock();
+    Module.ReleaseThreadLock();
 }
 
 extern "C" HRESULT WINAPI SetAppCompatData(DWORD dwType, DWORD dwValue)
 {
-    if (Module.lpSetApplicationCompatibilityData == NULL) { return DDERR_UNSUPPORTED; }
+    if (Module.SetApplicationCompatibilityData == NULL) { return DDERR_UNSUPPORTED; }
 
-    return Module.lpSetApplicationCompatibilityData(dwType, dwValue);
+    return Module.SetApplicationCompatibilityData(dwType, dwValue);
 }

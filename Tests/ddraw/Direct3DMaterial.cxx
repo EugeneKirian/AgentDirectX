@@ -25,7 +25,7 @@ SOFTWARE.
 VOID DirectDrawCreateMaterial(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -120,7 +120,7 @@ VOID DirectDrawCreateMaterial(LPMODULE module)
 VOID DirectDraw2CreateMaterial(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -220,7 +220,7 @@ VOID DirectDraw2CreateMaterial(LPMODULE module)
 VOID DirectDraw4CreateMaterial(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -320,7 +320,7 @@ VOID DirectDraw4CreateMaterial(LPMODULE module)
 VOID DirectDraw7CreateMaterial(LPMODULE module)
 {
     LPDIRECTDRAW7 dd7 = NULL;
-    HRESULT result = module->lpDirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
+    HRESULT result = module->DirectDrawCreateEx(NULL, (LPVOID*)&dd7, IID_IDirectDraw7, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW dd = NULL;
@@ -355,7 +355,7 @@ VOID DirectDraw7CreateMaterial(LPMODULE module)
 VOID DirectDrawCreateMaterialQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -510,7 +510,7 @@ VOID DirectDrawCreateMaterialQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw2CreateMaterialQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -670,7 +670,7 @@ VOID DirectDraw2CreateMaterialQueryInterfaceIUnknown(LPMODULE module)
 VOID DirectDraw4CreateMaterialQueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
@@ -1636,7 +1636,7 @@ VOID DirectDrawCreateMaterial3Query(LPDIRECT3DMATERIAL3 mat)
 VOID DirectDrawCreateMaterialQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECT3D d3d1 = NULL;
@@ -1743,7 +1743,7 @@ VOID DirectDrawCreateMaterialQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw2CreateMaterialQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW2 dd2 = NULL;
@@ -1855,7 +1855,7 @@ VOID DirectDraw2CreateMaterialQueryInterfaceAll(LPMODULE module)
 VOID DirectDraw4CreateMaterialQueryInterfaceAll(LPMODULE module)
 {
     LPDIRECTDRAW dd = NULL;
-    HRESULT result = module->lpDirectDrawCreate(NULL, &dd, NULL);
+    HRESULT result = module->DirectDrawCreate(NULL, &dd, NULL);
     IsEqual(result, DD_OK);
 
     LPDIRECTDRAW4 dd4 = NULL;
