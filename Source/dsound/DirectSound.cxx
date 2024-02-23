@@ -36,7 +36,7 @@ DirectSound::~DirectSound()
 
 HRESULT DirectSound::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -58,7 +58,7 @@ ULONG DirectSound::AddRef()
 
 ULONG DirectSound::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -68,7 +68,7 @@ ULONG DirectSound::Release()
 // Creates a DirectSoundBuffer object to hold a sequence of audio samples.
 HRESULT DirectSound::CreateSoundBuffer(LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER* ppDSBuffer, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateSoundBuffer(pcDSBufferDesc, ppDSBuffer, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateSoundBuffer(pcDSBufferDesc, ppDSBuffer, pUnkOuter);
 
     if (SUCCEEDED(result)) { *ppDSBuffer = ActivateAgentDelegate(DirectSoundBuffer, *ppDSBuffer); }
 
@@ -86,7 +86,7 @@ HRESULT DirectSound::DuplicateSoundBuffer(LPDIRECTSOUNDBUFFER pDSBufferOriginal,
 {
     AttemptAccessAgentValue(DirectSoundBuffer, pDSBufferOriginal);
 
-    const HRESULT result = this->State.Self->DuplicateSoundBuffer(pDSBufferOriginal, ppDSBufferDuplicate);
+    CONST HRESULT result = this->State.Self->DuplicateSoundBuffer(pDSBufferOriginal, ppDSBufferDuplicate);
 
     if (SUCCEEDED(result)) { *ppDSBufferDuplicate = ActivateAgentDelegate(DirectSoundBuffer, *ppDSBufferDuplicate); }
 

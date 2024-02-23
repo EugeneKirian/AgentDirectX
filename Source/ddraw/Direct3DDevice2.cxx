@@ -55,7 +55,7 @@ Direct3DDevice2::~Direct3DDevice2()
 
 HRESULT Direct3DDevice2::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -80,7 +80,7 @@ ULONG Direct3DDevice2::AddRef()
 
 ULONG Direct3DDevice2::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -131,7 +131,7 @@ HRESULT Direct3DDevice2::NextViewport(LPDIRECT3DVIEWPORT2 lpDirect3DViewport, LP
 {
     AttemptAccessAgentValue(Direct3DViewport2, lpDirect3DViewport);
 
-    const HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
+    CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport2, *lplpAnotherViewport); }
 
@@ -166,7 +166,7 @@ HRESULT Direct3DDevice2::EndScene()
 // Retrieves the Direct3D object for this device.
 HRESULT Direct3DDevice2::GetDirect3D(LPDIRECT3D2* lplpD3D)
 {
-    const HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
+    CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
     if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D2, *lplpD3D); }
 
@@ -184,7 +184,7 @@ HRESULT Direct3DDevice2::SetCurrentViewport(LPDIRECT3DVIEWPORT2 lpd3dViewport)
 // Retrieves the current viewport.
 HRESULT Direct3DDevice2::GetCurrentViewport(LPDIRECT3DVIEWPORT2* lplpd3dViewport)
 {
-    const HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
+    CONST HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
 
     if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgentDelegate(Direct3DViewport2, *lplpd3dViewport); }
 
@@ -202,7 +202,7 @@ HRESULT Direct3DDevice2::SetRenderTarget(LPDIRECTDRAWSURFACE lpNewRenderTarget, 
 // Retrieves a pointer to the DirectDraw surface that is being used as a render target.
 HRESULT Direct3DDevice2::GetRenderTarget(LPDIRECTDRAWSURFACE* lplpRenderTarget)
 {
-    const HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
+    CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
     if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface, *lplpRenderTarget); }
 

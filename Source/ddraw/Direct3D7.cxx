@@ -71,7 +71,7 @@ Direct3D7::~Direct3D7()
 
 HRESULT Direct3D7::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -96,7 +96,7 @@ ULONG Direct3D7::AddRef()
 
 ULONG Direct3D7::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -121,7 +121,7 @@ HRESULT Direct3D7::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE7 lpDDS, LPD
 {
     AttemptAccessAgentValue(DirectDrawSurface7, lpDDS);
 
-    const HRESULT result = this->State.Self->CreateDevice(rclsid, lpDDS, lplpD3DDevice);
+    CONST HRESULT result = this->State.Self->CreateDevice(rclsid, lpDDS, lplpD3DDevice);
 
     if (SUCCEEDED(result)) { *lplpD3DDevice = ActivateAgentDelegate(Direct3DDevice7, *lplpD3DDevice); }
 
@@ -131,7 +131,7 @@ HRESULT Direct3D7::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE7 lpDDS, LPD
 // Creates a vertex buffer object.
 HRESULT Direct3D7::CreateVertexBuffer(LPD3DVERTEXBUFFERDESC lpVBDesc, LPDIRECT3DVERTEXBUFFER7* lplpD3DVertexBuffer, DWORD dwFlags)
 {
-    const HRESULT result = this->State.Self->CreateVertexBuffer(lpVBDesc, lplpD3DVertexBuffer, dwFlags);
+    CONST HRESULT result = this->State.Self->CreateVertexBuffer(lpVBDesc, lplpD3DVertexBuffer, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpD3DVertexBuffer = ActivateAgentDelegate(Direct3DVertexBuffer7, *lplpD3DVertexBuffer); }
 

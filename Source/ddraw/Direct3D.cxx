@@ -58,7 +58,7 @@ Direct3D::~Direct3D()
 
 HRESULT Direct3D::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -87,7 +87,7 @@ ULONG Direct3D::AddRef()
 
 ULONG Direct3D::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -116,7 +116,7 @@ HRESULT Direct3D::EnumDevices(LPD3DENUMDEVICESCALLBACK lpEnumDevicesCallback, LP
 // Allocates a Direct3DLight object.
 HRESULT Direct3D::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgentDelegate(Direct3DLight, *lplpDirect3DLight); }
 
@@ -126,7 +126,7 @@ HRESULT Direct3D::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnk
 // Allocates a Direct3DMaterial object.
 HRESULT Direct3D::CreateMaterial(LPDIRECT3DMATERIAL* lplpDirect3DMaterial, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDirect3DMaterial = ActivateAgentDelegate(Direct3DMaterial, *lplpDirect3DMaterial); }
 
@@ -136,7 +136,7 @@ HRESULT Direct3D::CreateMaterial(LPDIRECT3DMATERIAL* lplpDirect3DMaterial, IUnkn
 // Creates a Direct3DViewport object.
 HRESULT Direct3D::CreateViewport(LPDIRECT3DVIEWPORT* lplpD3DViewport, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpD3DViewport = ActivateAgentDelegate(Direct3DViewport, *lplpD3DViewport); }
 

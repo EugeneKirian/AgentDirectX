@@ -71,7 +71,7 @@ DirectDraw::~DirectDraw()
 
 HRESULT DirectDraw::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -100,7 +100,7 @@ ULONG DirectDraw::AddRef()
 
 ULONG DirectDraw::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -116,7 +116,7 @@ HRESULT DirectDraw::Compact()
 // Creates a DirectDrawClipper object.
 HRESULT DirectDraw::CreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER FAR* lplpDDClipper, IUnknown FAR* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDClipper = ActivateAgentDelegate(DirectDrawClipper, *lplpDDClipper); }
 
@@ -126,7 +126,7 @@ HRESULT DirectDraw::CreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER FAR* lplpDD
 // Creates a DirectDrawPalette object for this DirectDraw object.
 HRESULT DirectDraw::CreatePalette(DWORD dwFlags, LPPALETTEENTRY lpColorTable, LPDIRECTDRAWPALETTE FAR* lplpDDPalette, IUnknown FAR* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreatePalette(dwFlags, lpColorTable, lplpDDPalette, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreatePalette(dwFlags, lpColorTable, lplpDDPalette, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDPalette = ActivateAgentDelegate(DirectDrawPalette, *lplpDDPalette); }
 
@@ -136,7 +136,7 @@ HRESULT DirectDraw::CreatePalette(DWORD dwFlags, LPPALETTEENTRY lpColorTable, LP
 // Creates a DirectDrawSurface object for this DirectDraw object.
 HRESULT DirectDraw::CreateSurface(LPDDSURFACEDESC lpDDSurfaceDesc, LPDIRECTDRAWSURFACE FAR* lplpDDSurface, IUnknown FAR* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateSurface(lpDDSurfaceDesc, lplpDDSurface, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateSurface(lpDDSurfaceDesc, lplpDDSurface, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDDSurface); }
 
@@ -148,7 +148,7 @@ HRESULT DirectDraw::DuplicateSurface(LPDIRECTDRAWSURFACE lpDDSurface, LPDIRECTDR
 {
     AttemptAccessAgentValue(DirectDrawSurface, lpDDSurface);
 
-    const HRESULT result = this->State.Self->DuplicateSurface(lpDDSurface, lplpDupDDSurface);
+    CONST HRESULT result = this->State.Self->DuplicateSurface(lpDDSurface, lplpDupDDSurface);
 
     if (SUCCEEDED(result)) { *lplpDupDDSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDupDDSurface); }
 
@@ -210,7 +210,7 @@ HRESULT DirectDraw::GetFourCCCodes(LPDWORD lpdwNumCodes, LPDWORD lpdwCodes)
 // Retrieves the DirectDrawSurface object that currently represents the surface memory that GDI is treating as the primary surface.
 HRESULT DirectDraw::GetGDISurface(LPDIRECTDRAWSURFACE FAR* lplpGDIDDSSurface)
 {
-    const HRESULT result = this->State.Self->GetGDISurface(lplpGDIDDSSurface);
+    CONST HRESULT result = this->State.Self->GetGDISurface(lplpGDIDDSSurface);
 
     if (SUCCEEDED(result)) { *lplpGDIDDSSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpGDIDDSSurface); }
 
@@ -261,7 +261,7 @@ HRESULT DirectDraw::SetDisplayMode(DWORD dwWidth, DWORD dwHeight, DWORD dwBPP)
 }
 
 // Helps the application synchronize itself with the vertical-blank interval.
-HRESULT DirectDraw::WaitForVerticalBlank(DWORD dwFlags,HANDLE hEvent)
+HRESULT DirectDraw::WaitForVerticalBlank(DWORD dwFlags, HANDLE hEvent)
 {
     return this->State.Self->WaitForVerticalBlank(dwFlags, hEvent);
 }

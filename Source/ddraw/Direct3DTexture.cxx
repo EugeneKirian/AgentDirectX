@@ -42,7 +42,7 @@ Direct3DTexture::~Direct3DTexture()
 
 HRESULT Direct3DTexture::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -70,7 +70,7 @@ ULONG Direct3DTexture::AddRef()
 
 ULONG Direct3DTexture::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 

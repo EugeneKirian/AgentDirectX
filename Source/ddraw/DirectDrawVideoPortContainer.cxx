@@ -56,7 +56,7 @@ DirectDrawVideoPortContainer::~DirectDrawVideoPortContainer()
 
 HRESULT DirectDrawVideoPortContainer::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -85,7 +85,7 @@ ULONG DirectDrawVideoPortContainer::AddRef()
 
 ULONG DirectDrawVideoPortContainer::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -95,7 +95,7 @@ ULONG DirectDrawVideoPortContainer::Release()
 // Creates a DirectDrawVideoPort object.
 HRESULT DirectDrawVideoPortContainer::CreateVideoPort(DWORD dwFlags, LPDDVIDEOPORTDESC lpDDVideoPortDesc, LPDIRECTDRAWVIDEOPORT FAR* lplpDDVideoPort, IUnknown FAR* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateVideoPort(dwFlags, lpDDVideoPortDesc, lplpDDVideoPort, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateVideoPort(dwFlags, lpDDVideoPortDesc, lplpDDVideoPort, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDVideoPort = ActivateAgentDelegate(DirectDrawVideoPort, *lplpDDVideoPort); }
 

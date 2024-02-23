@@ -52,7 +52,7 @@ BOOL Assembler::Agent(LPVOID value, REFIID riid, LPVOID* agent)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {
@@ -75,7 +75,7 @@ LPVOID Assembler::Agent(LPVOID value, REFIID riid)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {
@@ -115,7 +115,7 @@ BOOL Assembler::IsAgent(LPVOID agent, REFIID riid)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {
@@ -138,7 +138,7 @@ BOOL Assembler::IsValue(LPVOID value, REFIID riid)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {
@@ -217,7 +217,7 @@ BOOL Assembler::Value(LPVOID agent, REFIID riid, LPVOID* value)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {
@@ -240,7 +240,7 @@ LPVOID Assembler::Value(LPVOID agent, REFIID riid)
 
     EnterCriticalSection(&this->State->Mutex);
 
-    const INT count = this->State->Items.Count();
+    CONST INT count = this->State->Items.Count();
 
     for (INT x = 0; x < count; x++)
     {

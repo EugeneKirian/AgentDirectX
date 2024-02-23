@@ -26,7 +26,7 @@ SOFTWARE.
 #define DIRECT_SOUND_LOAD_ERROR_MESSAGE "Unable to load dsound.dll library."
 #define DIRECT_SOUND_ALREADY_LOADED_ERROR_MESSAGE "The dsound.dll library already loaded."
 
-static VOID Exit(const LPCSTR title, const LPCSTR message)
+static VOID Exit(CONST LPCSTR title, CONST LPCSTR message)
 {
     MessageBoxA(NULL, message, title, MB_OK | MB_ICONEXCLAMATION);
 

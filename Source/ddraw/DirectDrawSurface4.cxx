@@ -73,7 +73,7 @@ DirectDrawSurface4::~DirectDrawSurface4()
 
 HRESULT DirectDrawSurface4::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -102,7 +102,7 @@ ULONG DirectDrawSurface4::AddRef()
 
 ULONG DirectDrawSurface4::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -142,7 +142,7 @@ HRESULT DirectDrawSurface4::Blt(LPRECT lpDestRect, LPDIRECTDRAWSURFACE4 lpDDSrcS
         if (dwFlags & DDBLT_PRIVATE_ALIASPATTERN) { AttemptAccessAgentValue(DirectDrawSurface, lpDDBltFx->lpDDSPattern); }
     }
 
-    const HRESULT result = this->State.Self->Blt(lpDestRect, lpDDSrcSurface, lpSrcRect, dwFlags, lpDDBltFx);
+    CONST HRESULT result = this->State.Self->Blt(lpDestRect, lpDDSrcSurface, lpSrcRect, dwFlags, lpDDBltFx);
 
     if (lpDDBltFx != NULL)
     {
@@ -165,7 +165,7 @@ HRESULT DirectDrawSurface4::BltBatch(LPDDBLTBATCH lpDDBltBatch, DWORD dwCount, D
 {
     if (lpDDBltBatch != NULL) { AttemptAccessAgentValue(DirectDrawSurface, lpDDBltBatch->lpDDSSrc); }
 
-    const HRESULT result = this->State.Self->BltBatch(lpDDBltBatch, dwCount, dwFlags);
+    CONST HRESULT result = this->State.Self->BltBatch(lpDDBltBatch, dwCount, dwFlags);
 
     if (lpDDBltBatch != NULL) { lpDDBltBatch->lpDDSSrc = ActivateAgentDelegate(DirectDrawSurface, lpDDBltBatch->lpDDSSrc); }
 
@@ -227,7 +227,7 @@ HRESULT DirectDrawSurface4::Flip(LPDIRECTDRAWSURFACE4 lpDDSurfaceTargetOverride,
 // and increments the reference count of the retrieved interface.
 HRESULT DirectDrawSurface4::GetAttachedSurface(LPDDSCAPS2 lpDDSCaps, LPDIRECTDRAWSURFACE4 FAR* lplpDDAttachedSurface)
 {
-    const HRESULT result = this->State.Self->GetAttachedSurface(lpDDSCaps, lplpDDAttachedSurface);
+    CONST HRESULT result = this->State.Self->GetAttachedSurface(lpDDSCaps, lplpDDAttachedSurface);
 
     if (SUCCEEDED(result)) { *lplpDDAttachedSurface = ActivateAgentDelegate(DirectDrawSurface4, *lplpDDAttachedSurface); }
 
@@ -251,7 +251,7 @@ HRESULT DirectDrawSurface4::GetCaps(LPDDSCAPS2 lpDDSCaps)
 // and increments the reference count of the returned clipper.
 HRESULT DirectDrawSurface4::GetClipper(LPDIRECTDRAWCLIPPER FAR* lplpDDClipper)
 {
-    HRESULT result = this->State.Self->GetClipper(lplpDDClipper);
+    CONST HRESULT result = this->State.Self->GetClipper(lplpDDClipper);
 
     if (SUCCEEDED(result)) { *lplpDDClipper = ActivateAgentDelegate(DirectDrawClipper, *lplpDDClipper); }
 
@@ -288,7 +288,7 @@ HRESULT DirectDrawSurface4::GetOverlayPosition(LPLONG lplX, LPLONG lplY)
 // and increments the reference count of the returned palette.
 HRESULT DirectDrawSurface4::GetPalette(LPDIRECTDRAWPALETTE FAR* lplpDDPalette)
 {
-    const HRESULT result = this->State.Self->GetPalette(lplpDDPalette);
+    CONST HRESULT result = this->State.Self->GetPalette(lplpDDPalette);
 
     if (SUCCEEDED(result)) { *lplpDDPalette = ActivateAgentDelegate(DirectDrawPalette, *lplpDDPalette); }
 
@@ -389,7 +389,7 @@ HRESULT DirectDrawSurface4::UpdateOverlay(LPRECT lpSrcRect, LPDIRECTDRAWSURFACE4
         if (dwFlags & DDOVER_ALPHASRCSURFACEOVERRIDE) { AttemptAccessAgentValue(DirectDrawSurface, lpDDOverlayFx->lpDDSAlphaSrc); }
     }
 
-    const HRESULT result = this->State.Self->UpdateOverlay(lpSrcRect, lpDDDestSurface, lpDestRect, dwFlags, lpDDOverlayFx);
+    CONST HRESULT result = this->State.Self->UpdateOverlay(lpSrcRect, lpDDDestSurface, lpDestRect, dwFlags, lpDDOverlayFx);
 
     if (lpDDOverlayFx != NULL)
     {
@@ -418,7 +418,7 @@ HRESULT DirectDrawSurface4::UpdateOverlayZOrder(DWORD dwFlags, LPDIRECTDRAWSURFA
 // Retrieves an interface to the DirectDraw object that was used to create this surface.
 HRESULT DirectDrawSurface4::GetDDInterface(LPVOID FAR* lplpDD)
 {
-    const HRESULT result = this->State.Self->GetDDInterface(lplpDD);
+    CONST HRESULT result = this->State.Self->GetDDInterface(lplpDD);
 
     if (SUCCEEDED(result)) { *lplpDD = ActivateAgentDelegate(DirectDraw4, *lplpDD); }
 

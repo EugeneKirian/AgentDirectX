@@ -40,7 +40,7 @@ DirectSoundFullDuplex::~DirectSoundFullDuplex()
 
 HRESULT DirectSoundFullDuplex::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -64,7 +64,7 @@ ULONG DirectSoundFullDuplex::AddRef()
 
 ULONG DirectSoundFullDuplex::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -73,7 +73,7 @@ ULONG DirectSoundFullDuplex::Release()
 
 HRESULT DirectSoundFullDuplex::Initialize(LPCGUID pCaptureGuid, LPCGUID pRenderGuid, LPCDSCBUFFERDESC lpDscBufferDesc, LPCDSBUFFERDESC lpDsBufferDesc, HWND hWnd, DWORD dwLevel, LPLPDIRECTSOUNDCAPTUREBUFFER8 lplpDirectSoundFullDuplexCaptureBuffer8, LPLPDIRECTSOUNDBUFFER8 lplpDirectSoundFullDuplexBuffer8)
 {
-    const HRESULT result = this->State.Self->Initialize(pCaptureGuid, pRenderGuid, lpDscBufferDesc, lpDsBufferDesc, hWnd, dwLevel, lplpDirectSoundFullDuplexCaptureBuffer8, lplpDirectSoundFullDuplexBuffer8);
+    CONST HRESULT result = this->State.Self->Initialize(pCaptureGuid, pRenderGuid, lpDscBufferDesc, lpDsBufferDesc, hWnd, dwLevel, lplpDirectSoundFullDuplexCaptureBuffer8, lplpDirectSoundFullDuplexBuffer8);
 
     if (SUCCEEDED(result))
     {

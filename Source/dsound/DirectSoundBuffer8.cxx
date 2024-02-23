@@ -50,7 +50,7 @@ DirectSoundBuffer8::~DirectSoundBuffer8()
 
 HRESULT DirectSoundBuffer8::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -77,7 +77,7 @@ ULONG DirectSoundBuffer8::AddRef()
 
 ULONG DirectSoundBuffer8::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -210,7 +210,7 @@ HRESULT DirectSoundBuffer8::AcquireResources(DWORD dwFlags, DWORD dwEffectsCount
 // Retrieves an interface for an effect object associated with the buffer.
 HRESULT DirectSoundBuffer8::GetObjectInPath(REFGUID rguidObject, DWORD dwIndex, REFGUID rguidInterface, LPVOID* ppObject)
 {
-    const HRESULT result = this->State.Self->GetObjectInPath(rguidObject, dwIndex, rguidInterface, ppObject);
+    CONST HRESULT result = this->State.Self->GetObjectInPath(rguidObject, dwIndex, rguidInterface, ppObject);
 
     if (SUCCEEDED(result))
     {

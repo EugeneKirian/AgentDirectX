@@ -40,7 +40,7 @@ Direct3DViewport3::~Direct3DViewport3()
 
 HRESULT Direct3DViewport3::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -63,7 +63,7 @@ ULONG Direct3DViewport3::AddRef()
 
 ULONG Direct3DViewport3::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -129,7 +129,7 @@ HRESULT Direct3DViewport3::SetBackgroundDepth(LPDIRECTDRAWSURFACE lpDDSurface)
 // Retrieves a DirectDraw surface that represents the current background-depth field associated with the viewport.
 HRESULT Direct3DViewport3::GetBackgroundDepth(LPDIRECTDRAWSURFACE* lplpDDSurface, LPBOOL lpValid)
 {
-    const HRESULT result = this->State.Self->GetBackgroundDepth(lplpDDSurface, lpValid);
+    CONST HRESULT result = this->State.Self->GetBackgroundDepth(lplpDDSurface, lpValid);
 
     if (SUCCEEDED(result)) { *lplpDDSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDDSurface); }
 
@@ -165,7 +165,7 @@ HRESULT Direct3DViewport3::NextLight(LPDIRECT3DLIGHT lpDirect3DLight, LPDIRECT3D
 {
     AttemptAccessAgentValue(Direct3DLight, lpDirect3DLight);
 
-    const HRESULT result = this->State.Self->NextLight(lpDirect3DLight, lplpDirect3DLight, dwFlags);
+    CONST HRESULT result = this->State.Self->NextLight(lpDirect3DLight, lplpDirect3DLight, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgentDelegate(Direct3DLight, *lplpDirect3DLight); }
 
@@ -195,7 +195,7 @@ HRESULT Direct3DViewport3::SetBackgroundDepth2(LPDIRECTDRAWSURFACE4 lpDDSurface)
 // Retrieves a DirectDraw surface that represents the current background-depth field associated with the viewport.
 HRESULT Direct3DViewport3::GetBackgroundDepth2(LPDIRECTDRAWSURFACE4* lplpDDS, LPBOOL lpValid)
 {
-    const HRESULT result = this->State.Self->GetBackgroundDepth2(lplpDDS, lpValid);
+    CONST HRESULT result = this->State.Self->GetBackgroundDepth2(lplpDDS, lpValid);
 
     if (SUCCEEDED(result)) { *lplpDDS = ActivateAgentDelegate(DirectDrawSurface4, *lplpDDS); }
 

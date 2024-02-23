@@ -62,7 +62,7 @@ Direct3DDevice::~Direct3DDevice()
 
 HRESULT Direct3DDevice::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -95,7 +95,7 @@ ULONG Direct3DDevice::AddRef()
 
 ULONG Direct3DDevice::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -128,7 +128,7 @@ HRESULT Direct3DDevice::SwapTextureHandles(LPDIRECT3DTEXTURE lpD3DTex1, LPDIRECT
 // Allocates an execute buffer for a display list.
 HRESULT Direct3DDevice::CreateExecuteBuffer(LPD3DEXECUTEBUFFERDESC lpDesc, LPDIRECT3DEXECUTEBUFFER* lplpDirect3DExecuteBuffer, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateExecuteBuffer(lpDesc, lplpDirect3DExecuteBuffer, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateExecuteBuffer(lpDesc, lplpDirect3DExecuteBuffer, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDirect3DExecuteBuffer = ActivateAgentDelegate(Direct3DExecuteBuffer, *lplpDirect3DExecuteBuffer); }
 
@@ -173,7 +173,7 @@ HRESULT Direct3DDevice::NextViewport(LPDIRECT3DVIEWPORT lpDirect3DViewport, LPDI
 {
     AttemptAccessAgentValue(Direct3DViewport, lpDirect3DViewport);
 
-    const HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
+    CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport, *lplpAnotherViewport); }
 
@@ -248,7 +248,7 @@ HRESULT Direct3DDevice::EndScene()
 // Retrieves the Direct3D object for this device.
 HRESULT Direct3DDevice::GetDirect3D(LPDIRECT3D* lplpD3D)
 {
-    const HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
+    CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
     if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D, *lplpD3D); }
 

@@ -55,7 +55,7 @@ Direct3DDevice3::~Direct3DDevice3()
 
 HRESULT Direct3DDevice3::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -80,7 +80,7 @@ ULONG Direct3DDevice3::AddRef()
 
 ULONG Direct3DDevice3::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -122,7 +122,7 @@ HRESULT Direct3DDevice3::NextViewport(LPDIRECT3DVIEWPORT3 lpDirect3DViewport, LP
 {
     AttemptAccessAgentValue(Direct3DViewport3, lpDirect3DViewport);
 
-    const HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
+    CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport3, *lplpAnotherViewport); }
 
@@ -157,7 +157,7 @@ HRESULT Direct3DDevice3::EndScene()
 // Retrieves the Direct3D object for this device.
 HRESULT Direct3DDevice3::GetDirect3D(LPDIRECT3D3* lplpD3D)
 {
-    const HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
+    CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
     if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D3, *lplpD3D); }
 
@@ -175,7 +175,7 @@ HRESULT Direct3DDevice3::SetCurrentViewport(LPDIRECT3DVIEWPORT3 lpd3dViewport)
 // Retrieves the current viewport.
 HRESULT Direct3DDevice3::GetCurrentViewport(LPDIRECT3DVIEWPORT3* lplpd3dViewport)
 {
-    const HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
+    CONST HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
 
     if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgentDelegate(Direct3DViewport3, *lplpd3dViewport); }
 
@@ -193,7 +193,7 @@ HRESULT Direct3DDevice3::SetRenderTarget(LPDIRECTDRAWSURFACE4 lpNewRenderTarget,
 // Retrieves a pointer to the DirectDraw surface that is being used as a render target.
 HRESULT Direct3DDevice3::GetRenderTarget(LPDIRECTDRAWSURFACE4* lplpRenderTarget)
 {
-    const HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
+    CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
     if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface4, *lplpRenderTarget); }
 
@@ -330,7 +330,7 @@ HRESULT Direct3DDevice3::ComputeSphereVisibility(LPD3DVECTOR lpCenters, LPD3DVAL
 // Retrieves a texture assigned to a given stage for a device.
 HRESULT Direct3DDevice3::GetTexture(DWORD dwStage, LPDIRECT3DTEXTURE2* lplpTexture)
 {
-    const HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
+    CONST HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
 
     if (SUCCEEDED(result)) { *lplpTexture = ActivateAgentDelegate(Direct3DTexture2, *lplpTexture); }
 

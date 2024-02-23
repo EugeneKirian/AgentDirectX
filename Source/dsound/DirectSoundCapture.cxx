@@ -36,7 +36,7 @@ DirectSoundCapture::~DirectSoundCapture()
 
 HRESULT DirectSoundCapture::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -58,7 +58,7 @@ ULONG DirectSoundCapture::AddRef()
 
 ULONG DirectSoundCapture::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -68,7 +68,7 @@ ULONG DirectSoundCapture::Release()
 // Creates a capture buffer.
 HRESULT DirectSoundCapture::CreateCaptureBuffer(LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateCaptureBuffer(pcDSCBufferDesc, ppDSCBuffer, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateCaptureBuffer(pcDSCBufferDesc, ppDSCBuffer, pUnkOuter);
 
     if (SUCCEEDED(result)) { *ppDSCBuffer = ActivateAgentDelegate(DirectSoundCaptureBuffer8, *ppDSCBuffer); }
 

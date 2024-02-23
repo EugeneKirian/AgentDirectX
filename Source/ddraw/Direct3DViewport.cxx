@@ -39,7 +39,7 @@ Direct3DViewport::~Direct3DViewport()
 
 HRESULT Direct3DViewport::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -62,7 +62,7 @@ ULONG Direct3DViewport::AddRef()
 
 ULONG Direct3DViewport::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -124,7 +124,7 @@ HRESULT Direct3DViewport::SetBackgroundDepth(LPDIRECTDRAWSURFACE lpDDSurface)
 // Retrieves a DirectDraw surface that represents the current background-depth field associated with the viewport.
 HRESULT Direct3DViewport::GetBackgroundDepth(LPDIRECTDRAWSURFACE* lplpDDSurface, LPBOOL lpValid)
 {
-    const HRESULT result = this->State.Self->GetBackgroundDepth(lplpDDSurface, lpValid);
+    CONST HRESULT result = this->State.Self->GetBackgroundDepth(lplpDDSurface, lpValid);
 
     if (SUCCEEDED(result)) { *lplpDDSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDDSurface); }
 
@@ -160,7 +160,7 @@ HRESULT Direct3DViewport::NextLight(LPDIRECT3DLIGHT lpDirect3DLight, LPDIRECT3DL
 {
     AttemptAccessAgentValue(Direct3DLight, lpDirect3DLight);
 
-    const HRESULT result = this->State.Self->NextLight(lpDirect3DLight, lplpDirect3DLight, dwFlags);
+    CONST HRESULT result = this->State.Self->NextLight(lpDirect3DLight, lplpDirect3DLight, dwFlags);
 
     if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgentDelegate(Direct3DLight, *lplpDirect3DLight); }
 

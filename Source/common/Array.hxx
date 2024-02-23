@@ -35,11 +35,11 @@ public:
     Array(INT capacity);
     virtual ~Array();
 
-    BOOL Add(const T& item);
+    BOOL Add(CONST T& item);
     BOOL Remove(INT index);
     VOID Clear(VOID);
 
-    const INT Count(VOID);
+    CONST INT Count(VOID);
 
     T& operator[](INT index);
 
@@ -76,7 +76,7 @@ inline Array<T>::~Array()
 }
 
 template<typename T>
-BOOL Array<T>::Add(const T& item)
+BOOL Array<T>::Add(CONST T& item)
 {
     BOOL result = FALSE;
 
@@ -90,7 +90,7 @@ BOOL Array<T>::Add(const T& item)
     }
     else
     {
-        const INT capacity = this->State.Capacity * DEFAULT_ARRAY_CAPACITY_MULTIPLIER;
+        CONST INT capacity = this->State.Capacity * DEFAULT_ARRAY_CAPACITY_MULTIPLIER;
 
         T* ptr = (T*)realloc(this->State.Items, capacity * sizeof(T));
 
@@ -148,7 +148,7 @@ VOID Array<T>::Clear(VOID)
 }
 
 template<typename T>
-inline const INT Array<T>::Count(VOID)
+inline CONST INT Array<T>::Count(VOID)
 {
     return this->State.Count;
 }
@@ -165,7 +165,7 @@ inline VOID Array<T>::Initialize(INT capacity)
     this->State.Count = 0;
     this->State.Capacity = capacity;
 
-    const UINT size = capacity * sizeof(T);
+    CONST UINT size = capacity * sizeof(T);
 
     this->State.Items = (T*)malloc(size);
     ZeroMemory(this->State.Items, size);

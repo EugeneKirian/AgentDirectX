@@ -35,7 +35,7 @@ DirectSoundFXChorus::~DirectSoundFXChorus()
 
 HRESULT DirectSoundFXChorus::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -57,7 +57,7 @@ ULONG DirectSoundFXChorus::AddRef()
 
 ULONG DirectSoundFXChorus::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 

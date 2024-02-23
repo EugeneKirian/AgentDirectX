@@ -60,7 +60,7 @@ Direct3D2::~Direct3D2()
 
 HRESULT Direct3D2::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -89,7 +89,7 @@ ULONG Direct3D2::AddRef()
 
 ULONG Direct3D2::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -113,7 +113,7 @@ HRESULT Direct3D2::EnumDevices(LPD3DENUMDEVICESCALLBACK lpEnumDevicesCallback, L
 // This object can then be associated with a viewport by using the IDirect3DViewport2::AddLight method.
 HRESULT Direct3D2::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgentDelegate(Direct3DLight, *lplpDirect3DLight); }
 
@@ -123,7 +123,7 @@ HRESULT Direct3D2::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUn
 // Allocates a Direct3DMaterial2 object.
 HRESULT Direct3D2::CreateMaterial(LPDIRECT3DMATERIAL2* lplpDirect3DMaterial, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDirect3DMaterial = ActivateAgentDelegate(Direct3DMaterial2, *lplpDirect3DMaterial); }
 
@@ -134,7 +134,7 @@ HRESULT Direct3D2::CreateMaterial(LPDIRECT3DMATERIAL2* lplpDirect3DMaterial, IUn
 // The viewport is associated with a Direct3DDevice object by using the IDirect3DDevice2::AddViewport method.
 HRESULT Direct3D2::CreateViewport(LPDIRECT3DVIEWPORT2* lplpD3DViewport, IUnknown* pUnkOuter)
 {
-    const HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
+    CONST HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpD3DViewport = ActivateAgentDelegate(Direct3DViewport2, *lplpD3DViewport); }
 
@@ -152,7 +152,7 @@ HRESULT Direct3D2::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE lpDDS, LPDI
 {
     AttemptAccessAgentValue(DirectDrawSurface, lpDDS);
 
-    const HRESULT result = this->State.Self->CreateDevice(rclsid, lpDDS, lplpD3DDevice);
+    CONST HRESULT result = this->State.Self->CreateDevice(rclsid, lpDDS, lplpD3DDevice);
 
     if (SUCCEEDED(result)) { *lplpD3DDevice = ActivateAgentDelegate(Direct3DDevice2, *lplpD3DDevice); }
 

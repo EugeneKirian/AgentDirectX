@@ -87,7 +87,7 @@ static BOOL CALLBACK DirectSoundEnumerateCallbackW(LPGUID lpGuid, LPCWSTR lpcstr
 // The DirectSoundCaptureCreate function creates and initializes an object that supports the IDirectSoundCapture interface.
 extern "C" HRESULT WINAPI DirectSoundCaptureCreate(LPCGUID lpcGUID, LPDIRECTSOUNDCAPTURE * lplpDSC, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.DirectSoundCaptureCreate(lpcGUID, lplpDSC, pUnkOuter);
+    CONST HRESULT result = Module.DirectSoundCaptureCreate(lpcGUID, lplpDSC, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDSC = AssembleAgent(DirectSoundCapture, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDSC); }
 
@@ -101,7 +101,7 @@ extern "C" HRESULT WINAPI DirectSoundCaptureCreate8(LPCGUID lpcGUID, LPDIRECTSOU
 {
     if (Module.DirectSoundCaptureCreate8 == NULL) { return DSERR_UNSUPPORTED; }
 
-    const HRESULT result = Module.DirectSoundCaptureCreate8(lpcGUID, lplpDSC, pUnkOuter);
+    CONST HRESULT result = Module.DirectSoundCaptureCreate8(lpcGUID, lplpDSC, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDSC = AssembleAgent(DirectSoundCapture, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDSC); }
 
@@ -137,7 +137,7 @@ extern "C" HRESULT WINAPI DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW lpDSEnu
 // This function creates and initializes an IDirectSound interface.
 extern "C" HRESULT WINAPI DirectSoundCreate(LPCGUID lpcGuid, LPDIRECTSOUND * ppDS, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.DirectSoundCreate(lpcGuid, ppDS, pUnkOuter);
+    CONST HRESULT result = Module.DirectSoundCreate(lpcGuid, ppDS, pUnkOuter);
 
     if (SUCCEEDED(result)) { *ppDS = AssembleAgent(DirectSound, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *ppDS); }
 
@@ -149,7 +149,7 @@ extern "C" HRESULT WINAPI DirectSoundCreate8(LPCGUID lpcGuidDevice, LPDIRECTSOUN
 {
     if (Module.DirectSoundCreate8 == NULL) { return DSERR_UNSUPPORTED; }
 
-    const HRESULT result = Module.DirectSoundCreate8(lpcGuidDevice, ppDS8, pUnkOuter);
+    CONST HRESULT result = Module.DirectSoundCreate8(lpcGuidDevice, ppDS8, pUnkOuter);
 
     if (SUCCEEDED(result)) { *ppDS8 = AssembleAgent(DirectSound8, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *ppDS8); }
 
@@ -188,7 +188,7 @@ extern "C" HRESULT WINAPI DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevic
 {
     if (Module.DirectSoundFullDuplexCreate == NULL) { return DSERR_UNSUPPORTED; }
 
-    const HRESULT result = Module.DirectSoundFullDuplexCreate(pcGuidCaptureDevice, pcGuidRenderDevice, pcDSCBufferDesc, pcDSBufferDesc, hWnd, dwLevel, ppDSFD, ppDSCBuffer8, ppDSBuffer8, pUnkOuter);
+    CONST HRESULT result = Module.DirectSoundFullDuplexCreate(pcGuidCaptureDevice, pcGuidRenderDevice, pcDSCBufferDesc, pcDSBufferDesc, hWnd, dwLevel, ppDSFD, ppDSCBuffer8, ppDSBuffer8, pUnkOuter);
 
     if (SUCCEEDED(result))
     {

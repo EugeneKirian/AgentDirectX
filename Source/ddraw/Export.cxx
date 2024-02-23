@@ -119,7 +119,7 @@ extern "C" HRESULT WINAPI DSoundHelp(HWND hWnd, WNDPROC lpWndProc, DWORD pid)
 // Creates an instance of a DirectDraw object.
 extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
+    CONST HRESULT result = Module.DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDD = AssembleAgent(DirectDraw, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDD); }
 
@@ -129,7 +129,7 @@ extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD,
 // Creates an instance of a DirectDrawClipper object not associated with a DirectDraw object.
 extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER * lplpDDClipper, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.DirectDrawCreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
+    CONST HRESULT result = Module.DirectDrawCreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDDClipper = AssembleAgent(DirectDrawClipper, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDDClipper); }
 
@@ -139,7 +139,7 @@ extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLI
 // Creates an instance of a DirectDraw object that supports the set of Direct3D interfaces in DirectX 7.0.
 extern "C" HRESULT WINAPI DirectDrawCreateEx(GUID * lpGuid, LPVOID * lplpDD, REFIID iid, IUnknown * pUnkOuter)
 {
-    const HRESULT result = Module.DirectDrawCreateEx(lpGuid, lplpDD, iid, pUnkOuter);
+    CONST HRESULT result = Module.DirectDrawCreateEx(lpGuid, lplpDD, iid, pUnkOuter);
 
     if (SUCCEEDED(result)) { *lplpDD = AssembleAgent(DirectDraw7, Module.Assembler, (new AssemblerDelegate(Module.Assembler)), *lplpDD); }
 

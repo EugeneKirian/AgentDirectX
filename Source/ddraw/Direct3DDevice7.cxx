@@ -53,7 +53,7 @@ Direct3DDevice7::~Direct3DDevice7()
 
 HRESULT Direct3DDevice7::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
 {
-    const HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
+    CONST HRESULT result = this->State.Self->QueryInterface(riid, ppvObj);
 
     if (SUCCEEDED(result))
     {
@@ -77,7 +77,7 @@ ULONG Direct3DDevice7::AddRef()
 
 ULONG Direct3DDevice7::Release()
 {
-    const ULONG result = this->State.Self->Release();
+    CONST ULONG result = this->State.Self->Release();
 
     if (result == 0) { delete this; }
 
@@ -118,7 +118,7 @@ HRESULT Direct3DDevice7::EndScene()
 // Retrieves the Direct3D object for this device.
 HRESULT Direct3DDevice7::GetDirect3D(LPDIRECT3D7* lplpD3D)
 {
-    const HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
+    CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
     if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D7, *lplpD3D); }
 
@@ -136,7 +136,7 @@ HRESULT Direct3DDevice7::SetRenderTarget(LPDIRECTDRAWSURFACE7 lpNewRenderTarget,
 // Retrieves a pointer to the DirectDraw surface that is being used as a render target.
 HRESULT Direct3DDevice7::GetRenderTarget(LPDIRECTDRAWSURFACE7* lplpRenderTarget)
 {
-    const HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
+    CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
     if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface7, *lplpRenderTarget); }
 
@@ -300,7 +300,7 @@ HRESULT Direct3DDevice7::ComputeSphereVisibility(LPD3DVECTOR lpCenters, LPD3DVAL
 // method retrieves a texture assigned to a given stage for a device.
 HRESULT Direct3DDevice7::GetTexture(DWORD dwStage, LPDIRECTDRAWSURFACE7* lplpTexture)
 {
-    const HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
+    CONST HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
 
     if (SUCCEEDED(result)) { *lplpTexture = ActivateAgentDelegate(DirectDrawSurface7, *lplpTexture); }
 
