@@ -167,7 +167,7 @@ HRESULT DirectDrawSurface7::BltBatch(LPDDBLTBATCH lpDDBltBatch, DWORD dwCount, D
 
     CONST HRESULT result = this->State.Self->BltBatch(lpDDBltBatch, dwCount, dwFlags);
 
-    if (lpDDBltBatch != NULL) { lpDDBltBatch->lpDDSSrc = ActivateAgentDelegate(DirectDrawSurface, lpDDBltBatch->lpDDSSrc); }
+    if (lpDDBltBatch != NULL) { lpDDBltBatch->lpDDSSrc = ActivateAgent(DirectDrawSurface, lpDDBltBatch->lpDDSSrc); }
 
     return result;
 }
