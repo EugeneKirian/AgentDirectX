@@ -36,7 +36,7 @@ public:
     STDMETHOD_(ULONG, AddRef)(THIS);
     STDMETHOD_(ULONG, Release)(THIS);
 
-    /*** IDirect3DViewport2 ***/
+    /*** IDirect3DViewport ***/
 
     STDMETHOD(Initialize)(THIS_ LPDIRECT3D);
     STDMETHOD(GetViewport)(THIS_ LPD3DVIEWPORT);
