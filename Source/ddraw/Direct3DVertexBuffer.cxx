@@ -82,7 +82,7 @@ HRESULT Direct3DVertexBuffer::ProcessVertices(DWORD dwVertexOp, DWORD dwDestInde
     AttemptAccessAgentValue(Direct3DVertexBuffer, lpSrcBuffer);
     AttemptAccessAgentValue(Direct3DDevice3, lpD3DDevice);
 
-    return this->State.Self->Optimize(lpD3DDevice, dwFlags);
+    return this->State.Self->ProcessVertices(dwVertexOp, dwDestIndex, dwCount, lpSrcBuffer, dwSrcIndex, lpD3DDevice, dwFlags);
 }
 
 // Retrieves a description of the vertex buffer.

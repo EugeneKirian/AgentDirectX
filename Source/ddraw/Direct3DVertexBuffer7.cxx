@@ -82,7 +82,7 @@ HRESULT Direct3DVertexBuffer7::ProcessVertices(DWORD dwVertexOp, DWORD dwDestInd
     AttemptAccessAgentValue(Direct3DVertexBuffer7, lpSrcBuffer);
     AttemptAccessAgentValue(Direct3DDevice7, lpD3DDevice);
 
-    return this->State.Self->Optimize(lpD3DDevice, dwFlags);
+    return this->State.Self->ProcessVertices(dwVertexOp, dwDestIndex, dwCount, lpSrcBuffer, dwSrcIndex, lpD3DDevice, dwFlags);
 }
 
 // Retrieves a description of the vertex buffer.
@@ -104,5 +104,5 @@ HRESULT Direct3DVertexBuffer7::ProcessVerticesStrided(DWORD dwVertexOp, DWORD dw
 {
     AttemptAccessAgentValue(Direct3DDevice7, lpD3DDevice);
 
-    return this->State.Self->Optimize(lpD3DDevice, dwFlags);
+    return this->State.Self->ProcessVerticesStrided(dwVertexOp, dwDestIndex, dwCount, lpVertexArray, dwSrcIndex, lpD3DDevice, dwFlags);
 }
