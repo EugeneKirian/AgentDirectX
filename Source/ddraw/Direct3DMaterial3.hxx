@@ -32,7 +32,7 @@ public:
 
     /*** IUnknown ***/
 
-    STDMETHOD(QueryInterface)(THIS_ REFIID riid, LPVOID * ppvObj);
+    STDMETHOD(QueryInterface)(THIS_ REFIID riid, LPVOID* ppvObj);
     STDMETHOD_(ULONG, AddRef)(THIS);
     STDMETHOD_(ULONG, Release)(THIS);
 
