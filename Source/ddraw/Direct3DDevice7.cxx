@@ -238,7 +238,7 @@ HRESULT Direct3DDevice7::PreLoad(LPDIRECTDRAWSURFACE7 lpddsTexture)
 }
 
 // Renders the specified array of vertices as a sequence of geometric primitives of the specified type.
-HRESULT Direct3DDevice7::DrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, DWORD  dwVertexTypeDesc, LPVOID lpvVertices, DWORD  dwVertexCount, DWORD  dwFlags)
+HRESULT Direct3DDevice7::DrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, DWORD dwVertexTypeDesc, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags)
 {
     return this->State.Self->DrawPrimitive(dptPrimitiveType, dwVertexTypeDesc, lpvVertices, dwVertexCount, dwFlags);
 }
