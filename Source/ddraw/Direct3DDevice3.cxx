@@ -312,12 +312,16 @@ HRESULT Direct3DDevice3::DrawIndexedPrimitiveStrided(D3DPRIMITIVETYPE d3dptPrimi
 // Renders an array of vertices in a vertex buffer as a sequence of geometric primitives.
 HRESULT Direct3DDevice3::DrawPrimitiveVB(D3DPRIMITIVETYPE d3dptPrimitiveType, LPDIRECT3DVERTEXBUFFER lpd3dVertexBuffer, DWORD dwStartVertex, DWORD dwNumVertices, DWORD dwFlags)
 {
+    AttemptAccessAgentValue(Direct3DVertexBuffer, lpd3dVertexBuffer);
+
     return this->State.Self->DrawPrimitiveVB(d3dptPrimitiveType, lpd3dVertexBuffer, dwStartVertex, dwNumVertices, dwFlags);
 }
 
 // Renders a geometric primitive based on indexing into an array of vertices within a vertex buffer.
 HRESULT Direct3DDevice3::DrawIndexedPrimitiveVB(D3DPRIMITIVETYPE d3dptPrimitiveType, LPDIRECT3DVERTEXBUFFER lpd3dVertexBuffer, LPWORD lpwIndices, DWORD dwIndexCount, DWORD dwFlags)
 {
+    AttemptAccessAgentValue(Direct3DVertexBuffer, lpd3dVertexBuffer);
+
     return this->State.Self->DrawIndexedPrimitiveVB(d3dptPrimitiveType, lpd3dVertexBuffer, lpwIndices, dwIndexCount, dwFlags);
 }
 

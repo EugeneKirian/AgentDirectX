@@ -297,7 +297,7 @@ HRESULT Direct3DDevice7::ComputeSphereVisibility(LPD3DVECTOR lpCenters, LPD3DVAL
     return this->State.Self->ComputeSphereVisibility(lpCenters, lpRadii, dwNumSpheres, dwFlags, lpdwReturnValues);
 }
 
-// method retrieves a texture assigned to a given stage for a device.
+// Retrieves a texture assigned to a given stage for a device.
 HRESULT Direct3DDevice7::GetTexture(DWORD dwStage, LPDIRECTDRAWSURFACE7* lplpTexture)
 {
     CONST HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
@@ -336,7 +336,7 @@ HRESULT Direct3DDevice7::ValidateDevice(LPDWORD lpdwPasses)
 // Applies an existing device-state block to the rendering device.
 HRESULT Direct3DDevice7::ApplyStateBlock(DWORD dwBlockHandle)
 {
-    return this->State.Self->CaptureStateBlock(dwBlockHandle);
+    return this->State.Self->ApplyStateBlock(dwBlockHandle);
 }
 
 // Updates the values within an existing state block to the values currently set for the device.
