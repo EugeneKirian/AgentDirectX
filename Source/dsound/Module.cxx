@@ -82,9 +82,9 @@ BOOL InitializeModule()
 
 BOOL ReleaseModule()
 {
-    delete Module.Assembler;
+    if (Module.Assembler != NULL) { delete Module.Assembler; }
 
-    BOOL result = Module.Module != NULL ? FreeLibrary(Module.Module) : FALSE;
+    CONST BOOL result = Module.Module != NULL ? FreeLibrary(Module.Module) : FALSE;
 
     ZeroMemory(&Module, sizeof(ModuleState));
 
