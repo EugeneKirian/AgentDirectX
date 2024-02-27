@@ -125,7 +125,7 @@ HRESULT Direct3D3::EnumDevices(LPD3DENUMDEVICESCALLBACK lpEnumDevicesCallback, L
 
 // Allocates a Direct3DLight object.
 // This object can then be associated with a viewport by using the IDirect3DViewport3::AddLight method.
-HRESULT Direct3D3::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnkOuter)
+HRESULT Direct3D3::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
 
@@ -135,7 +135,7 @@ HRESULT Direct3D3::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUn
 }
 
 // Allocates a Direct3DMaterial3 object.
-HRESULT Direct3D3::CreateMaterial(LPDIRECT3DMATERIAL3* lplpDirect3DMaterial, IUnknown* pUnkOuter)
+HRESULT Direct3D3::CreateMaterial(LPDIRECT3DMATERIAL3* lplpDirect3DMaterial, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
 
@@ -146,7 +146,7 @@ HRESULT Direct3D3::CreateMaterial(LPDIRECT3DMATERIAL3* lplpDirect3DMaterial, IUn
 
 // Creates a Direct3DViewport object.
 // The viewport is associated with a Direct3DDevice object by using the IDirect3DDevice3::AddViewport method.
-HRESULT Direct3D3::CreateViewport(LPDIRECT3DVIEWPORT3* lplpD3DViewport, IUnknown* pUnkOuter)
+HRESULT Direct3D3::CreateViewport(LPDIRECT3DVIEWPORT3* lplpD3DViewport, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
 
@@ -162,7 +162,7 @@ HRESULT Direct3D3::FindDevice(LPD3DFINDDEVICESEARCH lpD3DFDS, LPD3DFINDDEVICERES
 }
 
 // Creates a Direct3D device to be used with the DrawPrimitive methods.
-HRESULT Direct3D3::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE4 lpDDS, LPDIRECT3DDEVICE3* lplpD3DDevice, IUnknown* pUnkOuter)
+HRESULT Direct3D3::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE4 lpDDS, LPDIRECT3DDEVICE3* lplpD3DDevice, LPUNKNOWN pUnkOuter)
 {
     AttemptAccessAgentValue(DirectDrawSurface4, lpDDS);
 
@@ -174,7 +174,7 @@ HRESULT Direct3D3::CreateDevice(REFCLSID rclsid, LPDIRECTDRAWSURFACE4 lpDDS, LPD
 }
 
 // Creates a vertex buffer object.
-HRESULT Direct3D3::CreateVertexBuffer(LPD3DVERTEXBUFFERDESC lpVBDesc, LPDIRECT3DVERTEXBUFFER* lpD3DVertexBuffer, DWORD dwFlags, IUnknown* pUnkOuter)
+HRESULT Direct3D3::CreateVertexBuffer(LPD3DVERTEXBUFFERDESC lpVBDesc, LPDIRECT3DVERTEXBUFFER* lpD3DVertexBuffer, DWORD dwFlags, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateVertexBuffer(lpVBDesc, lpD3DVertexBuffer, dwFlags, pUnkOuter);
 

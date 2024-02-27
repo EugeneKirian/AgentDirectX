@@ -66,7 +66,7 @@ ULONG DirectSoundCapture::Release()
 }
 
 // Creates a capture buffer.
-HRESULT DirectSoundCapture::CreateCaptureBuffer(LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, IUnknown* pUnkOuter)
+HRESULT DirectSoundCapture::CreateCaptureBuffer(LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateCaptureBuffer(pcDSCBufferDesc, ppDSCBuffer, pUnkOuter);
 

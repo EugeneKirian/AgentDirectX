@@ -114,7 +114,7 @@ HRESULT Direct3D::EnumDevices(LPD3DENUMDEVICESCALLBACK lpEnumDevicesCallback, LP
 }
 
 // Allocates a Direct3DLight object.
-HRESULT Direct3D::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnkOuter)
+HRESULT Direct3D::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
 
@@ -124,7 +124,7 @@ HRESULT Direct3D::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnk
 }
 
 // Allocates a Direct3DMaterial object.
-HRESULT Direct3D::CreateMaterial(LPDIRECT3DMATERIAL* lplpDirect3DMaterial, IUnknown* pUnkOuter)
+HRESULT Direct3D::CreateMaterial(LPDIRECT3DMATERIAL* lplpDirect3DMaterial, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
 
@@ -134,7 +134,7 @@ HRESULT Direct3D::CreateMaterial(LPDIRECT3DMATERIAL* lplpDirect3DMaterial, IUnkn
 }
 
 // Creates a Direct3DViewport object.
-HRESULT Direct3D::CreateViewport(LPDIRECT3DVIEWPORT* lplpD3DViewport, IUnknown* pUnkOuter)
+HRESULT Direct3D::CreateViewport(LPDIRECT3DVIEWPORT* lplpD3DViewport, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
 

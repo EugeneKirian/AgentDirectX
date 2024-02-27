@@ -111,7 +111,7 @@ HRESULT Direct3D2::EnumDevices(LPD3DENUMDEVICESCALLBACK lpEnumDevicesCallback, L
 
 // Allocates a Direct3DLight object.
 // This object can then be associated with a viewport by using the IDirect3DViewport2::AddLight method.
-HRESULT Direct3D2::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUnkOuter)
+HRESULT Direct3D2::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateLight(lplpDirect3DLight, pUnkOuter);
 
@@ -121,7 +121,7 @@ HRESULT Direct3D2::CreateLight(LPDIRECT3DLIGHT* lplpDirect3DLight, IUnknown* pUn
 }
 
 // Allocates a Direct3DMaterial2 object.
-HRESULT Direct3D2::CreateMaterial(LPDIRECT3DMATERIAL2* lplpDirect3DMaterial, IUnknown* pUnkOuter)
+HRESULT Direct3D2::CreateMaterial(LPDIRECT3DMATERIAL2* lplpDirect3DMaterial, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateMaterial(lplpDirect3DMaterial, pUnkOuter);
 
@@ -132,7 +132,7 @@ HRESULT Direct3D2::CreateMaterial(LPDIRECT3DMATERIAL2* lplpDirect3DMaterial, IUn
 
 // Creates a Direct3DViewport object.
 // The viewport is associated with a Direct3DDevice object by using the IDirect3DDevice2::AddViewport method.
-HRESULT Direct3D2::CreateViewport(LPDIRECT3DVIEWPORT2* lplpD3DViewport, IUnknown* pUnkOuter)
+HRESULT Direct3D2::CreateViewport(LPDIRECT3DVIEWPORT2* lplpD3DViewport, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateViewport(lplpD3DViewport, pUnkOuter);
 

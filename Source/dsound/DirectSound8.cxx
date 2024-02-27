@@ -68,7 +68,7 @@ ULONG DirectSound8::Release()
 }
 
 // Creates a DirectSoundBuffer object to hold a sequence of audio samples.
-HRESULT DirectSound8::CreateSoundBuffer(LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER* ppDSBuffer, IUnknown* pUnkOuter)
+HRESULT DirectSound8::CreateSoundBuffer(LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER* ppDSBuffer, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateSoundBuffer(pcDSBufferDesc, ppDSBuffer, pUnkOuter);
 

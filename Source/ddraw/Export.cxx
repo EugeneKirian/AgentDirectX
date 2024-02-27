@@ -53,28 +53,28 @@ struct DirectDrawEnumerateExCallbackContextW
     LPVOID lpContext;
 };
 
-static BOOL CALLBACK DirectDrawEnumerateCallbackA(GUID* lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext)
+static BOOL CALLBACK DirectDrawEnumerateCallbackA(LPGUID lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext)
 {
     DirectDrawEnumerateCallbackContextA* context = (DirectDrawEnumerateCallbackContextA*)lpContext;
 
     return context->lpCallback(lpGUID, lpDriverDescription, lpDriverName, context->lpContext);
 }
 
-static BOOL CALLBACK DirectDrawEnumerateExCallbackA(GUID* lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext, HMONITOR hMonitor)
+static BOOL CALLBACK DirectDrawEnumerateExCallbackA(LPGUID lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext, HMONITOR hMonitor)
 {
     DirectDrawEnumerateExCallbackContextA* context = (DirectDrawEnumerateExCallbackContextA*)lpContext;
 
     return context->lpCallback(lpGUID, lpDriverDescription, lpDriverName, context->lpContext, hMonitor);
 }
 
-static BOOL CALLBACK DirectDrawEnumerateExCallbackW(GUID* lpGUID, LPWSTR lpDriverDescription, LPWSTR lpDriverName, LPVOID lpContext, HMONITOR hMonitor)
+static BOOL CALLBACK DirectDrawEnumerateExCallbackW(LPGUID lpGUID, LPWSTR lpDriverDescription, LPWSTR lpDriverName, LPVOID lpContext, HMONITOR hMonitor)
 {
     DirectDrawEnumerateExCallbackContextW* context = (DirectDrawEnumerateExCallbackContextW*)lpContext;
 
     return context->lpCallback(lpGUID, lpDriverDescription, lpDriverName, context->lpContext, hMonitor);
 }
 
-static BOOL CALLBACK DirectDrawEnumerateCallbackW(GUID* lpGUID, LPWSTR lpDriverDescription, LPWSTR lpDriverName, LPVOID lpContext)
+static BOOL CALLBACK DirectDrawEnumerateCallbackW(LPGUID lpGUID, LPWSTR lpDriverDescription, LPWSTR lpDriverName, LPVOID lpContext)
 {
     DirectDrawEnumerateCallbackContextW* context = (DirectDrawEnumerateCallbackContextW*)lpContext;
 
@@ -117,7 +117,7 @@ extern "C" HRESULT WINAPI DSoundHelp(HWND hWnd, WNDPROC lpWndProc, DWORD pid)
 }
 
 // Creates an instance of a DirectDraw object.
-extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectDrawCreate(LPGUID lpGUID, LPDIRECTDRAW * lplpDD, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = Module.DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
 
@@ -127,7 +127,7 @@ extern "C" HRESULT WINAPI DirectDrawCreate(GUID * lpGUID, LPDIRECTDRAW * lplpDD,
 }
 
 // Creates an instance of a DirectDrawClipper object not associated with a DirectDraw object.
-extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER * lplpDDClipper, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLIPPER * lplpDDClipper, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = Module.DirectDrawCreateClipper(dwFlags, lplpDDClipper, pUnkOuter);
 
@@ -137,7 +137,7 @@ extern "C" HRESULT WINAPI DirectDrawCreateClipper(DWORD dwFlags, LPDIRECTDRAWCLI
 }
 
 // Creates an instance of a DirectDraw object that supports the set of Direct3D interfaces in DirectX 7.0.
-extern "C" HRESULT WINAPI DirectDrawCreateEx(GUID * lpGuid, LPVOID * lplpDD, REFIID iid, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectDrawCreateEx(LPGUID lpGuid, LPVOID * lplpDD, REFIID iid, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = Module.DirectDrawCreateEx(lpGuid, lplpDD, iid, pUnkOuter);
 

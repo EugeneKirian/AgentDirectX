@@ -126,7 +126,7 @@ HRESULT Direct3DDevice::SwapTextureHandles(LPDIRECT3DTEXTURE lpD3DTex1, LPDIRECT
 }
 
 // Allocates an execute buffer for a display list.
-HRESULT Direct3DDevice::CreateExecuteBuffer(LPD3DEXECUTEBUFFERDESC lpDesc, LPDIRECT3DEXECUTEBUFFER* lplpDirect3DExecuteBuffer, IUnknown* pUnkOuter)
+HRESULT Direct3DDevice::CreateExecuteBuffer(LPD3DEXECUTEBUFFERDESC lpDesc, LPDIRECT3DEXECUTEBUFFER* lplpDirect3DExecuteBuffer, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = this->State.Self->CreateExecuteBuffer(lpDesc, lplpDirect3DExecuteBuffer, pUnkOuter);
 

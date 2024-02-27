@@ -85,7 +85,7 @@ static BOOL CALLBACK DirectSoundEnumerateCallbackW(LPGUID lpGuid, LPCWSTR lpcstr
 }
 
 // The DirectSoundCaptureCreate function creates and initializes an object that supports the IDirectSoundCapture interface.
-extern "C" HRESULT WINAPI DirectSoundCaptureCreate(LPCGUID lpcGUID, LPDIRECTSOUNDCAPTURE * lplpDSC, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectSoundCaptureCreate(LPCGUID lpcGUID, LPDIRECTSOUNDCAPTURE * lplpDSC, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = Module.DirectSoundCaptureCreate(lpcGUID, lplpDSC, pUnkOuter);
 
@@ -97,7 +97,7 @@ extern "C" HRESULT WINAPI DirectSoundCaptureCreate(LPCGUID lpcGUID, LPDIRECTSOUN
 // The DirectSoundCaptureCreate8 function creates and initializes an object that supports the IDirectSoundCapture8 interface.
 // Although the older DirectSoundCaptureCreate function can also be used to obtain the IDirectSoundCapture8 interface,
 // the object created by that function cannot be used to create capture buffers that support the IDirectSoundCaptureBuffer8 interface.
-extern "C" HRESULT WINAPI DirectSoundCaptureCreate8(LPCGUID lpcGUID, LPDIRECTSOUNDCAPTURE8 * lplpDSC, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectSoundCaptureCreate8(LPCGUID lpcGUID, LPDIRECTSOUNDCAPTURE8 * lplpDSC, LPUNKNOWN pUnkOuter)
 {
     if (Module.DirectSoundCaptureCreate8 == NULL) { return DSERR_UNSUPPORTED; }
 
@@ -135,7 +135,7 @@ extern "C" HRESULT WINAPI DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW lpDSEnu
 }
 
 // This function creates and initializes an IDirectSound interface.
-extern "C" HRESULT WINAPI DirectSoundCreate(LPCGUID lpcGuid, LPDIRECTSOUND * ppDS, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectSoundCreate(LPCGUID lpcGuid, LPDIRECTSOUND * ppDS, LPUNKNOWN pUnkOuter)
 {
     CONST HRESULT result = Module.DirectSoundCreate(lpcGuid, ppDS, pUnkOuter);
 
@@ -145,7 +145,7 @@ extern "C" HRESULT WINAPI DirectSoundCreate(LPCGUID lpcGuid, LPDIRECTSOUND * ppD
 }
 
 // The DirectSoundCreate8 function creates and initializes an object that supports the IDirectSound8 interface.
-extern "C" HRESULT WINAPI DirectSoundCreate8(LPCGUID lpcGuidDevice, LPDIRECTSOUND8 * ppDS8, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectSoundCreate8(LPCGUID lpcGuidDevice, LPDIRECTSOUND8 * ppDS8, LPUNKNOWN pUnkOuter)
 {
     if (Module.DirectSoundCreate8 == NULL) { return DSERR_UNSUPPORTED; }
 
@@ -184,7 +184,7 @@ extern "C" HRESULT WINAPI DirectSoundEnumerateW(LPDSENUMCALLBACKW lpDSEnumCallba
 
 // he DirectSoundFullDuplexCreate8 function creates the DirectSound and DirectSoundCapture objects and returns the IDirectSoundFullDuplex8 interface.
 // This function requires Microsoft Windows XP. Full duplex can be implemented on other operating systems, but the capture and rendering devices must be created separately.
-extern "C" HRESULT WINAPI DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice, LPCDSCBUFFERDESC pcDSCBufferDesc, LPCDSBUFFERDESC pcDSBufferDesc, HWND hWnd, DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX * ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 * ppDSCBuffer8, LPDIRECTSOUNDBUFFER8 * ppDSBuffer8, IUnknown * pUnkOuter)
+extern "C" HRESULT WINAPI DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice, LPCDSCBUFFERDESC pcDSCBufferDesc, LPCDSBUFFERDESC pcDSBufferDesc, HWND hWnd, DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX * ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 * ppDSCBuffer8, LPDIRECTSOUNDBUFFER8 * ppDSBuffer8, LPUNKNOWN pUnkOuter)
 {
     if (Module.DirectSoundFullDuplexCreate == NULL) { return DSERR_UNSUPPORTED; }
 

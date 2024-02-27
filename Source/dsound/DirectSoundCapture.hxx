@@ -38,7 +38,7 @@ public:
 
     /*** IDirectSoundCapture ***/
 
-    STDMETHOD(CreateCaptureBuffer)(THIS_ LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, IUnknown* pUnkOuter);
+    STDMETHOD(CreateCaptureBuffer)(THIS_ LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
     STDMETHOD(GetCaps)(THIS_ LPDSCCAPS pDSCCaps);
     STDMETHOD(Initialize)(THIS_ LPCGUID pcGuidDevice);
 

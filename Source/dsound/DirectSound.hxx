@@ -38,7 +38,7 @@ public:
 
     /*** IDirectSound ***/
 
-    STDMETHOD(CreateSoundBuffer)(THIS_ LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER* ppDSBuffer, IUnknown* pUnkOuter);
+    STDMETHOD(CreateSoundBuffer)(THIS_ LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER* ppDSBuffer, LPUNKNOWN pUnkOuter);
     STDMETHOD(GetCaps)(THIS_ LPDSCAPS pDSCaps);
     STDMETHOD(DuplicateSoundBuffer)(THIS_ LPDIRECTSOUNDBUFFER pDSBufferOriginal, LPDIRECTSOUNDBUFFER* ppDSBufferDuplicate);
     STDMETHOD(SetCooperativeLevel)(THIS_ HWND hwnd, DWORD dwLevel);
