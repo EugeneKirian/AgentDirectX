@@ -43,7 +43,7 @@ HRESULT DirectSoundFXI3DL2Reverb::QueryInterface(REFIID riid, LPVOID FAR* ppvObj
         {
             if (IsEqualIID(IID_IDirectSoundFXI3DL2Reverb, riid)) { *ppvObj = ActivateAgent(DirectSoundFXI3DL2Reverb, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

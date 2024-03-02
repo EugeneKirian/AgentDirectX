@@ -47,7 +47,7 @@ HRESULT DirectSound3DListener::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
             else if (IsEqualIID(IID_IDirectSoundBuffer, riid)) { *ppvObj = ActivateAgent(DirectSoundBuffer, *ppvObj); }
             else if (IsEqualIID(IID_IKsPropertySet, riid)) { *ppvObj = ActivateAgent(KsPropertySet, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

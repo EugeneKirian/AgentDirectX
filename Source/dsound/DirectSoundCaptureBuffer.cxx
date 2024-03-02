@@ -47,7 +47,7 @@ HRESULT DirectSoundCaptureBuffer::QueryInterface(REFIID riid, LPVOID FAR* ppvObj
             else if (IsEqualIID(IID_IDirectSoundCaptureBuffer8, riid)) { *ppvObj = ActivateAgent(DirectSoundCaptureBuffer8, *ppvObj); }
             else if (IsEqualIID(IID_IDirectSoundNotify, riid)) { *ppvObj = ActivateAgent(DirectSoundNotify, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

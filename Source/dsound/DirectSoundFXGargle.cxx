@@ -43,7 +43,7 @@ HRESULT DirectSoundFXGargle::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
         {
             if (IsEqualIID(IID_IDirectSoundFXGargle, riid)) { *ppvObj = ActivateAgent(DirectSoundFXGargle, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

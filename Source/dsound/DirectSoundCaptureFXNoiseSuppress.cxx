@@ -43,7 +43,7 @@ HRESULT DirectSoundCaptureFXNoiseSuppress::QueryInterface(REFIID riid, LPVOID FA
         {
             if (IsEqualIID(IID_IDirectSoundCaptureFXNoiseSuppress, riid)) { *ppvObj = ActivateAgent(DirectSoundCaptureFXNoiseSuppress, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

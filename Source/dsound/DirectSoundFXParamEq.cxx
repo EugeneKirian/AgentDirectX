@@ -43,7 +43,7 @@ HRESULT DirectSoundFXParamEq::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
         {
             if (IsEqualIID(IID_IDirectSoundFXParamEq, riid)) { *ppvObj = ActivateAgent(DirectSoundFXParamEq, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

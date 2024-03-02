@@ -56,7 +56,7 @@ HRESULT DirectSoundCaptureBuffer8::QueryInterface(REFIID riid, LPVOID FAR* ppvOb
             else if (IsEqualIID(IID_IDirectSoundCaptureBuffer8, riid)) { *ppvObj = ActivateAgent(DirectSoundCaptureBuffer8, *ppvObj); }
             else if (IsEqualIID(IID_IDirectSoundNotify, riid)) { *ppvObj = ActivateAgent(DirectSoundNotify, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 
@@ -162,7 +162,7 @@ HRESULT DirectSoundCaptureBuffer8::GetObjectInPath(REFGUID rguidObject, DWORD dw
             //else if (IsEqualIID(IID_IMediaObject, rguidInterface)) { *ppObject = ActivateAgentDelegate(MediaObject, *ppObject); } // NOT IMPLEMENTED
             //else if (IsEqualIID(IID_IMediaObjectInPlace, rguidInterface)) { *ppObject = ActivateAgentDelegate(MediaObjectInPlace, *ppObject); } // NOT IMPLEMENTED
             //else if (IsEqualIID(IID_IMediaParams, rguidInterface)) { *ppObject = ActivateAgentDelegate(MediaParams, *ppObject); } // NOT IMPLEMENTED
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

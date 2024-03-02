@@ -43,7 +43,7 @@ HRESULT DirectSoundCaptureFXAec::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
         {
             if (IsEqualIID(IID_IDirectSoundCaptureFXAec, riid)) { *ppvObj = ActivateAgent(DirectSoundCaptureFXAec, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 

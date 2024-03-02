@@ -46,7 +46,7 @@ HRESULT DirectSound8::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
         {
             if (IsEqualIID(IID_IDirectSound, riid) || IsEqualIID(IID_IDirectSound8, riid)) { *ppvObj = ActivateAgent(DirectSound8, *ppvObj); }
             else if (IsEqualIID(IID_IUnknown, riid)) { *ppvObj = ActivateAgent(Unknown, *ppvObj); }
-            else { DebugBreak(); }
+            /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
     }
 
