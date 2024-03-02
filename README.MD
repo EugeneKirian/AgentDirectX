@@ -1,18 +1,18 @@
-## AgentDirectX
+## Agent DirectX
 
 ### Project
-AgentDirectX is envisioned as set of light-weight DirectX wrappers to be used as a foundation for development of other software. The further and separate development might include, but not limited to:
+Agent DirectX is a set of light-weight DirectX wrappers to be used as a foundation for development of other software. The further and separate development might include, but not limited to:
 
 1. Development of loggers.
-2. Development of compatibility wrappers for particular software.
-3. All kinds of debugging and observation tools, and
-4. Helpers in reverse engineering process.
+2. Development of compatibility wrappers for particular software/games.
+3. Development of debugging and observation tools, and
+4. Development of helpers and analysis tools for reverse engineering.
 
 ### Scope
-AgentDirectX consists of DirectX wrappers for the following:
+Agent DirectX consists of DirectX wrappers for the following:
 * [ ] DirectX 1-7
-	* [x] Direct3D Immediate Mode
-	- [ ] Direct3D Retained Mode
+	* [x] Direct3D (Immediate Mode)
+	- [ ] Direct3D (Retained Mode)
 	* [x] DirectDraw
 	* [ ] DirectInput
 	* [ ] DirectMusic
@@ -46,6 +46,9 @@ DirectX SDKs:
 
 Other:
 1. [DXGUID](https://github.com/EugeneKirian/DXGUID)
+
+### Derivatives
+1. [Log Agent DirectX](https://github.com/EugeneKirian/LogAgentDirectX)
 
 ### Code Style & Compatibility
 The code written in a way to contain the minimum of external dependencies, and to compile with Microsoft Visual Studio 6.0 C/C++ Compiler for legacy compatibility with Microsoft Windows XP. The repository has the corresponding projects to compile for the old platforms.
