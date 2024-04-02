@@ -131,7 +131,7 @@ HRESULT Direct3DViewport3::GetBackgroundDepth(LPDIRECTDRAWSURFACE* lplpDDSurface
 {
     CONST HRESULT result = this->State.Self->GetBackgroundDepth(lplpDDSurface, lpValid);
 
-    if (SUCCEEDED(result)) { *lplpDDSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDDSurface); }
+    if (SUCCEEDED(result)) { *lplpDDSurface = ActivateAgent(DirectDrawSurface, *lplpDDSurface); }
 
     return result;
 }
@@ -167,7 +167,7 @@ HRESULT Direct3DViewport3::NextLight(LPDIRECT3DLIGHT lpDirect3DLight, LPDIRECT3D
 
     CONST HRESULT result = this->State.Self->NextLight(lpDirect3DLight, lplpDirect3DLight, dwFlags);
 
-    if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgentDelegate(Direct3DLight, *lplpDirect3DLight); }
+    if (SUCCEEDED(result)) { *lplpDirect3DLight = ActivateAgent(Direct3DLight, *lplpDirect3DLight); }
 
     return result;
 }
@@ -197,7 +197,7 @@ HRESULT Direct3DViewport3::GetBackgroundDepth2(LPDIRECTDRAWSURFACE4* lplpDDS, LP
 {
     CONST HRESULT result = this->State.Self->GetBackgroundDepth2(lplpDDS, lpValid);
 
-    if (SUCCEEDED(result)) { *lplpDDS = ActivateAgentDelegate(DirectDrawSurface4, *lplpDDS); }
+    if (SUCCEEDED(result)) { *lplpDDS = ActivateAgent(DirectDrawSurface4, *lplpDDS); }
 
     return result;
 }

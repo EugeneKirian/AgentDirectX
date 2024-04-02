@@ -44,7 +44,7 @@ public:
     T& operator[](INT index);
 
 protected:
-	VOID Initialize(INT capacity);
+    VOID Initialize(INT capacity);
 
     struct
     {
@@ -58,13 +58,13 @@ protected:
 template<typename T>
 inline Array<T>::Array()
 {
-	this->Initialize(DEFAULT_ARRAY_CAPACITY_VALUE);
+    this->Initialize(DEFAULT_ARRAY_CAPACITY_VALUE);
 }
 
 template<typename T>
 inline Array<T>::Array(INT capacity)
 {
-	this->Initialize(capacity > 0 ? capacity : DEFAULT_ARRAY_CAPACITY_VALUE);
+    this->Initialize(capacity > 0 ? capacity : DEFAULT_ARRAY_CAPACITY_VALUE);
 }
 
 template<typename T>

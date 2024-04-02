@@ -79,7 +79,6 @@ HRESULT DirectDraw7::QueryInterface(REFIID riid, LPVOID FAR* ppvObj)
             else if (IsEqualIID(IID_IDirectDraw2, riid)) { *ppvObj = ActivateAgent(DirectDraw2, *ppvObj); }
             else if (IsEqualIID(IID_IDirectDraw4, riid)) { *ppvObj = ActivateAgent(DirectDraw4, *ppvObj); }
             else if (IsEqualIID(IID_IDirectDraw7, riid)) { *ppvObj = ActivateAgent(DirectDraw7, *ppvObj); }
-            else if (IsEqualIID(IID_IDirectDraw7, riid)) { *ppvObj = ActivateAgent(DirectDraw7, *ppvObj); }
             else if (IsEqualIID(IID_IDirectDrawVideoPortContainer, riid)) { *ppvObj = ActivateAgent(DirectDrawVideoPortContainer, *ppvObj); }
             /* else { HANDLE UNKNOWN IDENTIFIER } */
         }
@@ -207,7 +206,7 @@ HRESULT DirectDraw7::GetGDISurface(LPDIRECTDRAWSURFACE7 FAR* lplpGDIDDSSurface)
 {
     CONST HRESULT result = this->State.Self->GetGDISurface(lplpGDIDDSSurface);
 
-    if (SUCCEEDED(result)) { *lplpGDIDDSSurface = ActivateAgentDelegate(DirectDrawSurface7, *lplpGDIDDSSurface); }
+    if (SUCCEEDED(result)) { *lplpGDIDDSSurface = ActivateAgent(DirectDrawSurface7, *lplpGDIDDSSurface); }
 
     return result;
 }
@@ -272,7 +271,7 @@ HRESULT DirectDraw7::GetSurfaceFromDC(HDC hDC, LPDIRECTDRAWSURFACE7* lpDDS)
 {
     CONST HRESULT result = this->State.Self->GetSurfaceFromDC(hDC, lpDDS);
 
-    if (SUCCEEDED(result)) { *lpDDS = ActivateAgentDelegate(DirectDrawSurface7, *lpDDS); }
+    if (SUCCEEDED(result)) { *lpDDS = ActivateAgent(DirectDrawSurface7, *lpDDS); }
 
     return result;
 }

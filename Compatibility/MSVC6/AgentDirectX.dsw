@@ -15,6 +15,24 @@ Package=<4>
 
 ###############################################################################
 
+Project: "d3d8"=.\d3d8\d3d8.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name common
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dxguid
+    End Project Dependency
+}}}
+
+###############################################################################
+
 Project: "ddraw"=.\ddraw\ddraw.dsp - Package Owner=<4>
 
 Package=<5>

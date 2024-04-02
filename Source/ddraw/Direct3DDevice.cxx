@@ -175,7 +175,7 @@ HRESULT Direct3DDevice::NextViewport(LPDIRECT3DVIEWPORT lpDirect3DViewport, LPDI
 
     CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
-    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport, *lplpAnotherViewport); }
+    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgent(Direct3DViewport, *lplpAnotherViewport); }
 
     return result;
 }
@@ -250,7 +250,7 @@ HRESULT Direct3DDevice::GetDirect3D(LPDIRECT3D* lplpD3D)
 {
     CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
-    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D, *lplpD3D); }
+    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgent(Direct3D, *lplpD3D); }
 
     return result;
 }

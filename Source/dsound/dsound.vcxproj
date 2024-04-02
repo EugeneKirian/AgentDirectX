@@ -73,22 +73,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Bin\x32\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x32\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)Bin\x32\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x32\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\x64\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x64\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\x64\$(MSBuildProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Obj\x64\$(MSBuildProjectName)\$(Configuration)\</IntDir>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include;</ExternalIncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\common;..\..\SDK\DX90\Include</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

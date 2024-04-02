@@ -133,7 +133,7 @@ HRESULT Direct3DDevice2::NextViewport(LPDIRECT3DVIEWPORT2 lpDirect3DViewport, LP
 
     CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
-    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport2, *lplpAnotherViewport); }
+    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgent(Direct3DViewport2, *lplpAnotherViewport); }
 
     return result;
 }
@@ -168,7 +168,7 @@ HRESULT Direct3DDevice2::GetDirect3D(LPDIRECT3D2* lplpD3D)
 {
     CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
-    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D2, *lplpD3D); }
+    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgent(Direct3D2, *lplpD3D); }
 
     return result;
 }
@@ -186,7 +186,7 @@ HRESULT Direct3DDevice2::GetCurrentViewport(LPDIRECT3DVIEWPORT2* lplpd3dViewport
 {
     CONST HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
 
-    if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgentDelegate(Direct3DViewport2, *lplpd3dViewport); }
+    if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgent(Direct3DViewport2, *lplpd3dViewport); }
 
     return result;
 }
@@ -204,7 +204,7 @@ HRESULT Direct3DDevice2::GetRenderTarget(LPDIRECTDRAWSURFACE* lplpRenderTarget)
 {
     CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
-    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface, *lplpRenderTarget); }
+    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgent(DirectDrawSurface, *lplpRenderTarget); }
 
     return result;
 }

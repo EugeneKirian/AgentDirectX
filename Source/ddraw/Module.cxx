@@ -116,7 +116,7 @@ BOOL ReleaseModule()
 {
     if (Module.Assembler != NULL) { delete Module.Assembler; }
 
-    CONST  BOOL result = Module.Module != NULL ? FreeLibrary(Module.Module) : FALSE;
+    CONST BOOL result = Module.Module != NULL ? FreeLibrary(Module.Module) : FALSE;
 
     ZeroMemory(&Module, sizeof(ModuleState));
 

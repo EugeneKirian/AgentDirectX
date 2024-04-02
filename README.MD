@@ -20,7 +20,7 @@ Agent DirectX consists of DirectX wrappers for the following:
 	* [ ] DirectSetup
 	* [x] DirectSound
 * [ ] DirectX 8
-	* [ ] Direct3D
+	* [x] Direct3D
 	* [ ] DirectInput
 	* [ ] DirectMusic
 	* [ ] DirectPlay

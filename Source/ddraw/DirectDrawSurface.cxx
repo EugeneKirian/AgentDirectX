@@ -228,7 +228,7 @@ HRESULT DirectDrawSurface::GetAttachedSurface(LPDDSCAPS lpDDSCaps, LPDIRECTDRAWS
 {
     CONST HRESULT result = this->State.Self->GetAttachedSurface(lpDDSCaps, lplpDDAttachedSurface);
 
-    if (SUCCEEDED(result)) { *lplpDDAttachedSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpDDAttachedSurface); }
+    if (SUCCEEDED(result)) { *lplpDDAttachedSurface = ActivateAgent(DirectDrawSurface, *lplpDDAttachedSurface); }
 
     return result;
 }
@@ -252,7 +252,7 @@ HRESULT DirectDrawSurface::GetClipper(LPDIRECTDRAWCLIPPER FAR* lplpDDClipper)
 {
     CONST HRESULT result = this->State.Self->GetClipper(lplpDDClipper);
 
-    if (SUCCEEDED(result)) { *lplpDDClipper = ActivateAgentDelegate(DirectDrawClipper, *lplpDDClipper); }
+    if (SUCCEEDED(result)) { *lplpDDClipper = ActivateAgent(DirectDrawClipper, *lplpDDClipper); }
 
     return result;
 }
@@ -289,7 +289,7 @@ HRESULT DirectDrawSurface::GetPalette(LPDIRECTDRAWPALETTE FAR* lplpDDPalette)
 {
     CONST HRESULT result = this->State.Self->GetPalette(lplpDDPalette);
 
-    if (SUCCEEDED(result)) { *lplpDDPalette = ActivateAgentDelegate(DirectDrawPalette, *lplpDDPalette); }
+    if (SUCCEEDED(result)) { *lplpDDPalette = ActivateAgent(DirectDrawPalette, *lplpDDPalette); }
 
     return result;
 }

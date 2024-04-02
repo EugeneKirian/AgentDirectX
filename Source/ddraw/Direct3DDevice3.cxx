@@ -124,7 +124,7 @@ HRESULT Direct3DDevice3::NextViewport(LPDIRECT3DVIEWPORT3 lpDirect3DViewport, LP
 
     CONST HRESULT result = this->State.Self->NextViewport(lpDirect3DViewport, lplpAnotherViewport, dwFlags);
 
-    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgentDelegate(Direct3DViewport3, *lplpAnotherViewport); }
+    if (SUCCEEDED(result)) { *lplpAnotherViewport = ActivateAgent(Direct3DViewport3, *lplpAnotherViewport); }
 
     return result;
 }
@@ -159,7 +159,7 @@ HRESULT Direct3DDevice3::GetDirect3D(LPDIRECT3D3* lplpD3D)
 {
     CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
-    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D3, *lplpD3D); }
+    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgent(Direct3D3, *lplpD3D); }
 
     return result;
 }
@@ -177,7 +177,7 @@ HRESULT Direct3DDevice3::GetCurrentViewport(LPDIRECT3DVIEWPORT3* lplpd3dViewport
 {
     CONST HRESULT result = this->State.Self->GetCurrentViewport(lplpd3dViewport);
 
-    if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgentDelegate(Direct3DViewport3, *lplpd3dViewport); }
+    if (SUCCEEDED(result)) { *lplpd3dViewport = ActivateAgent(Direct3DViewport3, *lplpd3dViewport); }
 
     return result;
 }
@@ -195,7 +195,7 @@ HRESULT Direct3DDevice3::GetRenderTarget(LPDIRECTDRAWSURFACE4* lplpRenderTarget)
 {
     CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
-    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface4, *lplpRenderTarget); }
+    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgent(DirectDrawSurface4, *lplpRenderTarget); }
 
     return result;
 }
@@ -336,7 +336,7 @@ HRESULT Direct3DDevice3::GetTexture(DWORD dwStage, LPDIRECT3DTEXTURE2* lplpTextu
 {
     CONST HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
 
-    if (SUCCEEDED(result)) { *lplpTexture = ActivateAgentDelegate(Direct3DTexture2, *lplpTexture); }
+    if (SUCCEEDED(result)) { *lplpTexture = ActivateAgent(Direct3DTexture2, *lplpTexture); }
 
     return result;
 }

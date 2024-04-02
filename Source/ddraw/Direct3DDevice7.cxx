@@ -120,7 +120,7 @@ HRESULT Direct3DDevice7::GetDirect3D(LPDIRECT3D7* lplpD3D)
 {
     CONST HRESULT result = this->State.Self->GetDirect3D(lplpD3D);
 
-    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgentDelegate(Direct3D7, *lplpD3D); }
+    if (SUCCEEDED(result)) { *lplpD3D = ActivateAgent(Direct3D7, *lplpD3D); }
 
     return result;
 }
@@ -138,7 +138,7 @@ HRESULT Direct3DDevice7::GetRenderTarget(LPDIRECTDRAWSURFACE7* lplpRenderTarget)
 {
     CONST HRESULT result = this->State.Self->GetRenderTarget(lplpRenderTarget);
 
-    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgentDelegate(DirectDrawSurface7, *lplpRenderTarget); }
+    if (SUCCEEDED(result)) { *lplpRenderTarget = ActivateAgent(DirectDrawSurface7, *lplpRenderTarget); }
 
     return result;
 }
@@ -302,7 +302,7 @@ HRESULT Direct3DDevice7::GetTexture(DWORD dwStage, LPDIRECTDRAWSURFACE7* lplpTex
 {
     CONST HRESULT result = this->State.Self->GetTexture(dwStage, lplpTexture);
 
-    if (SUCCEEDED(result)) { *lplpTexture = ActivateAgentDelegate(DirectDrawSurface7, *lplpTexture); }
+    if (SUCCEEDED(result)) { *lplpTexture = ActivateAgent(DirectDrawSurface7, *lplpTexture); }
 
     return result;
 }

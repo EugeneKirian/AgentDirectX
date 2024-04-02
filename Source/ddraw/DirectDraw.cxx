@@ -212,7 +212,7 @@ HRESULT DirectDraw::GetGDISurface(LPDIRECTDRAWSURFACE FAR* lplpGDIDDSSurface)
 {
     CONST HRESULT result = this->State.Self->GetGDISurface(lplpGDIDDSSurface);
 
-    if (SUCCEEDED(result)) { *lplpGDIDDSSurface = ActivateAgentDelegate(DirectDrawSurface, *lplpGDIDDSSurface); }
+    if (SUCCEEDED(result)) { *lplpGDIDDSSurface = ActivateAgent(DirectDrawSurface, *lplpGDIDDSSurface); }
 
     return result;
 }
