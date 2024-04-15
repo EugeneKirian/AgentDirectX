@@ -36,12 +36,12 @@ typedef AssemblerDelegate* LPASSEMBLERDELEGATE;
 class AssemblerDelegateState;
 typedef AssemblerDelegateState* LPASSEMBLERDELEGATESTATE;
 
-struct AssemblerItem
+typedef struct AssemblerItem
 {
     LPVOID Agent;
     LPASSEMBLERDELEGATE Delegate;
     LPVOID Value;
-};
+} ASSEMBLERITEM, * LPASSEMBLERITEM;
 
 class AssemblerState
 {
@@ -49,7 +49,7 @@ public:
     AssemblerState();
     virtual ~AssemblerState();
 
-    Array<AssemblerItem> Items;
+    Array<ASSEMBLERITEM> Items;
 
     CRITICAL_SECTION Mutex;
 };
@@ -79,12 +79,12 @@ protected:
     LPASSEMBLERSTATE State;
 };
 
-struct AssemblerDelegateItem
+typedef struct AssemblerDelegateItem
 {
     LPVOID Agent;
     IID IID;
     LPVOID Value;
-};
+} ASSEMBLERDELEGATEITEM, * LPASSEMBLERDELEGATEITEM;
 
 class AssemblerDelegateState
 {
@@ -94,7 +94,7 @@ public:
 
     LPASSEMBLER Assembler;
 
-    Array<AssemblerDelegateItem> Items;
+    Array<ASSEMBLERDELEGATEITEM> Items;
 
     CRITICAL_SECTION Mutex;
 };

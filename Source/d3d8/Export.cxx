@@ -28,11 +28,11 @@ SOFTWARE.
 #include "Module.hxx"
 
 // NOTE: The method is called CheckFullscreen in Windows XP.
-extern "C" INT WINAPI Direct3D8EnableMaximizedWindowedModeShim(BOOL Enable)
+extern "C" HRESULT WINAPI Direct3D8EnableMaximizedWindowedModeShim(BOOL Enable)
 {
-    if (Module.Direct3D8EnableMaximizedWindowedModeShim == NULL) { return E_NOTIMPL; }
+    if (Module.EnableMaximizedWindowedMode == NULL) { return E_NOTIMPL; }
 
-    return Module.Direct3D8EnableMaximizedWindowedModeShim(Enable);
+    return Module.EnableMaximizedWindowedMode(Enable);
 }
 
 extern "C" HRESULT WINAPI ValidatePixelShader(CONST DWORD * Shader, CONST D3DCAPS8 * Caps, BOOL ReturnErrors, CHAR * *Errors)
@@ -45,7 +45,7 @@ extern "C" HRESULT WINAPI ValidateVertexShader(CONST DWORD * Shader, CONST DWORD
     return Module.ValidateVertexShader(Shader, Declaration, Caps, ReturnErrors, Errors);
 }
 
-extern "C" void WINAPI DebugSetMute(VOID)
+extern "C" VOID WINAPI DebugSetMute(VOID)
 {
     Module.DebugSetMute();
 }

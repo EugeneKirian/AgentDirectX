@@ -41,37 +41,37 @@ BOOL InitializeModule()
     if (Module.Module == NULL) { return FALSE; }
 
     Module.DirectSoundCaptureCreate = (LPDIRECTSOUNDCAPTURECREATE)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CAPTURE_CREATE_NAME);
-    if (Module.DirectSoundCaptureCreate == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundCaptureCreate == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundCaptureCreate8 = (LPDIRECTSOUNDCAPTURECREATE8)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CAPTURE_CREATE_8_NAME);
 
     Module.DirectSoundCaptureEnumerateA = (LPDIRECTSOUNDCAPTUREENUMERATEA)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CAPTURE_ENUMERATE_A_NAME);
-    if (Module.DirectSoundCaptureEnumerateA == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundCaptureEnumerateA == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundCaptureEnumerateW = (LPDIRECTSOUNDCAPTUREENUMERATEW)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CAPTURE_ENUMERATE_W_NAME);
-    if (Module.DirectSoundCaptureEnumerateW == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundCaptureEnumerateW == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundCreate = (LPDIRECTSOUNDCREATE)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CREATE_NAME);
-    if (Module.DirectSoundCreate == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundCreate == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundCreate8 = (LPDIRECTSOUNDCREATE8)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_CREATE_8_NAME);
 
     Module.DirectSoundEnumerateA = (LPDIRECTSOUNDENUMERATEA)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_ENUMERATE_A_NAME);
-    if (Module.DirectSoundEnumerateA == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundEnumerateA == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundEnumerateW = (LPDIRECTSOUNDENUMERATEW)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_ENUMERATE_W_NAME);
-    if (Module.DirectSoundEnumerateW == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DirectSoundEnumerateW == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DirectSoundFullDuplexCreate = (LPDIRECTSOUNDFULLDUPLEXCREATE)GetProcAddress(Module.Module, DIRECT_SOUND_DIRECT_SOUND_FULL_DUPLEX_CREATE_NAME);
 
     Module.DllCanUnloadNow = (LPDLLCANUNLOADNOW)GetProcAddress(Module.Module, DIRECT_SOUND_DLL_CAN_UNLOAD_NOW_NAME);
-    if (Module.DllCanUnloadNow == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DllCanUnloadNow == NULL) { ReleaseModule(); return FALSE; }
 
     Module.DllGetClassObject = (LPDLLGETCLASSOBJECT)GetProcAddress(Module.Module, DIRECT_SOUND_DLL_GET_CLASS_OBJECT_NAME);
-    if (Module.DllGetClassObject == NULL) { ReleaseModule(); return NULL; }
+    if (Module.DllGetClassObject == NULL) { ReleaseModule(); return FALSE; }
 
     Module.GetDeviceID = (LPGETDEVICEID)GetProcAddress(Module.Module, DIRECT_SOUND_GET_DEVICE_ID_NAME);
-    if (Module.GetDeviceID == NULL) { ReleaseModule(); return NULL; }
+    if (Module.GetDeviceID == NULL) { ReleaseModule(); return FALSE; }
 
     Module.Assembler = new Assembler();
 

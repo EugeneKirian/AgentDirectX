@@ -39,7 +39,7 @@ struct ModuleState
 
     LPASSEMBLER Assembler;
 
-    LPENABLEMAXIMIZEDWINDOWEDMODE Direct3D8EnableMaximizedWindowedModeShim;
+    LPENABLEMAXIMIZEDWINDOWEDMODE EnableMaximizedWindowedMode;
     LPVALIDATEPIXELSHADER ValidatePixelShader;
     LPVALIDATEVERTEXSHADER ValidateVertexShader;
     LPDEBUGSETMUTE DebugSetMute;

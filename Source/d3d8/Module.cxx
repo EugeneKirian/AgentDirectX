@@ -40,7 +40,7 @@ BOOL InitializeModule()
 
     if (Module.Module == NULL) { return FALSE; }
 
-    Module.Direct3D8EnableMaximizedWindowedModeShim = (LPENABLEMAXIMIZEDWINDOWEDMODE)GetProcAddress(Module.Module, DIRECT3D_ENABLE_MAXIMIZED_WINDOWED_MODE_NAME);
+    Module.EnableMaximizedWindowedMode = (LPENABLEMAXIMIZEDWINDOWEDMODE)GetProcAddress(Module.Module, DIRECT3D_CHECK_FULL_SCREEN_NAME);
 
     Module.ValidatePixelShader = (LPVALIDATEPIXELSHADER)GetProcAddress(Module.Module, DIRECT3D_VALIDATE_PIXEL_SHADER_NAME);
     if (Module.ValidatePixelShader == NULL) { ReleaseModule(); return NULL; }
