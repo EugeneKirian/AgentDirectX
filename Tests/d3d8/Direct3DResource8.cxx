@@ -275,6 +275,275 @@ VOID Direct3DResource8Create(LPMODULE module)
     Direct3DVolumeTextureResource8Create(module);
 }
 
+VOID Direct3DIndexBufferResource8Release(LPMODULE module)
+{
+    HWND hwnd = InitializeWindow();
+
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+
+    D3DPRESENT_PARAMETERS params;
+    ZeroMemory(&params, sizeof(D3DPRESENT_PARAMETERS));
+
+    params.BackBufferWidth = 640;
+    params.BackBufferHeight = 480;
+    params.BackBufferFormat = D3DFMT_A8R8G8B8;
+    params.BackBufferCount = 1;
+    params.MultiSampleType = D3DMULTISAMPLE_NONE;
+    params.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    params.hDeviceWindow = hwnd;
+    params.Windowed = TRUE;
+    params.EnableAutoDepthStencil = FALSE;
+    params.AutoDepthStencilFormat = D3DFMT_UNKNOWN;
+
+    LPDIRECT3DDEVICE8 device = NULL;
+    HRESULT result = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &params, &device);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(d3d, NULL);
+
+    LPDIRECT3DINDEXBUFFER8 ib = NULL;
+    result = device->CreateIndexBuffer(1024, D3DUSAGE_WRITEONLY, D3DFMT_INDEX16, D3DPOOL_DEFAULT, &ib);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(ib, NULL);
+
+    LPDIRECT3DRESOURCE8 res = NULL;
+    result = ib->QueryInterface(IID_IDirect3DResource8, (LPVOID*)&res);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(res, NULL);
+    IsEqual(res, ib);
+
+    IsEqual(res->Release(), 1);
+    IsEqual(res->Release(), 0);
+    IsEqual(res->Release(), 0);
+
+    DIRECTRELEASE(res);
+    DIRECTRELEASE(ib);
+    DIRECTRELEASE(device);
+    DIRECTRELEASE(d3d);
+
+    ReleaseWindow(hwnd);
+}
+
+VOID Direct3DVertexBufferResource8Release(LPMODULE module)
+{
+    HWND hwnd = InitializeWindow();
+
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+
+    D3DPRESENT_PARAMETERS params;
+    ZeroMemory(&params, sizeof(D3DPRESENT_PARAMETERS));
+
+    params.BackBufferWidth = 640;
+    params.BackBufferHeight = 480;
+    params.BackBufferFormat = D3DFMT_A8R8G8B8;
+    params.BackBufferCount = 1;
+    params.MultiSampleType = D3DMULTISAMPLE_NONE;
+    params.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    params.hDeviceWindow = hwnd;
+    params.Windowed = TRUE;
+    params.EnableAutoDepthStencil = FALSE;
+    params.AutoDepthStencilFormat = D3DFMT_UNKNOWN;
+
+    LPDIRECT3DDEVICE8 device = NULL;
+    HRESULT result = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &params, &device);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(d3d, NULL);
+
+    LPDIRECT3DVERTEXBUFFER8 vb = NULL;
+    result = device->CreateVertexBuffer(1024, D3DUSAGE_WRITEONLY, D3DFVF_XYZRHW, D3DPOOL_DEFAULT, &vb);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(vb, NULL);
+
+    LPDIRECT3DRESOURCE8 res = NULL;
+    result = vb->QueryInterface(IID_IDirect3DResource8, (LPVOID*)&res);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(res, NULL);
+    IsEqual(res, vb);
+
+    IsEqual(res->Release(), 1);
+    IsEqual(res->Release(), 0);
+    IsEqual(res->Release(), 0);
+
+    DIRECTRELEASE(res);
+    DIRECTRELEASE(vb);
+    DIRECTRELEASE(device);
+    DIRECTRELEASE(d3d);
+
+    ReleaseWindow(hwnd);
+}
+
+VOID Direct3DCubeTextureResource8Release(LPMODULE module)
+{
+    HWND hwnd = InitializeWindow();
+
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+
+    D3DPRESENT_PARAMETERS params;
+    ZeroMemory(&params, sizeof(D3DPRESENT_PARAMETERS));
+
+    params.BackBufferWidth = 640;
+    params.BackBufferHeight = 480;
+    params.BackBufferFormat = D3DFMT_A8R8G8B8;
+    params.BackBufferCount = 1;
+    params.MultiSampleType = D3DMULTISAMPLE_NONE;
+    params.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    params.hDeviceWindow = hwnd;
+    params.Windowed = TRUE;
+    params.EnableAutoDepthStencil = FALSE;
+    params.AutoDepthStencilFormat = D3DFMT_UNKNOWN;
+
+    LPDIRECT3DDEVICE8 device = NULL;
+    HRESULT result = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &params, &device);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(d3d, NULL);
+
+    LPDIRECT3DCUBETEXTURE8 tex = NULL;
+    result = device->CreateCubeTexture(256, 1, D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &tex);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(tex, NULL);
+
+    LPDIRECT3DRESOURCE8 res = NULL;
+    result = tex->QueryInterface(IID_IDirect3DResource8, (LPVOID*)&res);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(res, NULL);
+    IsEqual(res, tex);
+
+    IsEqual(res->Release(), 1);
+    IsEqual(res->Release(), 0);
+    IsEqual(res->Release(), 0);
+
+    DIRECTRELEASE(res);
+    DIRECTRELEASE(tex);
+    DIRECTRELEASE(device);
+    DIRECTRELEASE(d3d);
+
+    ReleaseWindow(hwnd);
+}
+
+VOID Direct3DTextureResource8Release(LPMODULE module)
+{
+    HWND hwnd = InitializeWindow();
+
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+
+    D3DPRESENT_PARAMETERS params;
+    ZeroMemory(&params, sizeof(D3DPRESENT_PARAMETERS));
+
+    params.BackBufferWidth = 640;
+    params.BackBufferHeight = 480;
+    params.BackBufferFormat = D3DFMT_A8R8G8B8;
+    params.BackBufferCount = 1;
+    params.MultiSampleType = D3DMULTISAMPLE_NONE;
+    params.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    params.hDeviceWindow = hwnd;
+    params.Windowed = TRUE;
+    params.EnableAutoDepthStencil = FALSE;
+    params.AutoDepthStencilFormat = D3DFMT_UNKNOWN;
+
+    LPDIRECT3DDEVICE8 device = NULL;
+    HRESULT result = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &params, &device);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(d3d, NULL);
+
+    LPDIRECT3DTEXTURE8 tex = NULL;
+    result = device->CreateTexture(256, 256, 1, D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &tex);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(tex, NULL);
+
+    LPDIRECT3DRESOURCE8 res = NULL;
+    result = tex->QueryInterface(IID_IDirect3DResource8, (LPVOID*)&res);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(res, NULL);
+    IsEqual(res, tex);
+
+    IsEqual(res->Release(), 1);
+    IsEqual(res->Release(), 0);
+    IsEqual(res->Release(), 0);
+
+    DIRECTRELEASE(res);
+    DIRECTRELEASE(tex);
+    DIRECTRELEASE(device);
+    DIRECTRELEASE(d3d);
+
+    ReleaseWindow(hwnd);
+}
+
+VOID Direct3DVolumeTextureResource8Release(LPMODULE module)
+{
+    HWND hwnd = InitializeWindow();
+
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+
+    D3DPRESENT_PARAMETERS params;
+    ZeroMemory(&params, sizeof(D3DPRESENT_PARAMETERS));
+
+    params.BackBufferWidth = 640;
+    params.BackBufferHeight = 480;
+    params.BackBufferFormat = D3DFMT_A8R8G8B8;
+    params.BackBufferCount = 1;
+    params.MultiSampleType = D3DMULTISAMPLE_NONE;
+    params.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    params.hDeviceWindow = hwnd;
+    params.Windowed = TRUE;
+    params.EnableAutoDepthStencil = FALSE;
+    params.AutoDepthStencilFormat = D3DFMT_UNKNOWN;
+
+    LPDIRECT3DDEVICE8 device = NULL;
+    HRESULT result = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hwnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &params, &device);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(d3d, NULL);
+
+    LPDIRECT3DVOLUMETEXTURE8 tex = NULL;
+    result = device->CreateVolumeTexture(256, 256, 256, 1, 0, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &tex);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(tex, NULL);
+
+    LPDIRECT3DRESOURCE8 res = NULL;
+    result = tex->QueryInterface(IID_IDirect3DResource8, (LPVOID*)&res);
+    IsEqual(result, D3D_OK);
+    IsNotEqual(res, NULL);
+    IsEqual(res, tex);
+
+    IsEqual(res->Release(), 1);
+    IsEqual(res->Release(), 0);
+    IsEqual(res->Release(), 0);
+
+    DIRECTRELEASE(res);
+    DIRECTRELEASE(tex);
+    DIRECTRELEASE(device);
+    DIRECTRELEASE(d3d);
+
+    ReleaseWindow(hwnd);
+}
+
+VOID Direct3DResource8Release(LPMODULE module)
+{
+    Direct3DIndexBufferResource8Release(module);
+    Direct3DVertexBufferResource8Release(module);
+    Direct3DCubeTextureResource8Release(module);
+    Direct3DTextureResource8Release(module);
+    Direct3DVolumeTextureResource8Release(module);
+}
+
 VOID Direct3DIndexBufferResource8QueryInterfaceIUnknown(LPMODULE module)
 {
     HWND hwnd = InitializeWindow();

@@ -27,8 +27,12 @@ SOFTWARE.
 
 VOID Direct3DDevice8Create(LPMODULE module);
 
+VOID Direct3DDevice8Release(LPMODULE module);
+
 VOID Direct3DDevice8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DDevice8QueryInterfaceAll(LPMODULE module);
 
 VOID Direct3DDevice8UnknownQueryInterfaceAll(LPMODULE module);
+
+VOID Direct3DDevice8SetRenderTarget(LPMODULE module);

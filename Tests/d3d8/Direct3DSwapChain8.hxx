@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DSwapChain8Create(LPMODULE module);
 
+VOID Direct3DSwapChain8Release(LPMODULE module);
+
 VOID Direct3DSwapChain8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DSwapChain8QueryInterfaceAll(LPMODULE module);

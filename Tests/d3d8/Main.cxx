@@ -44,6 +44,7 @@ SOFTWARE.
 VOID ExecuteDirect3D8(LPMODULE module)
 {
     Invoke(Direct3D8Create);
+    Invoke(Direct3D8Release);
     Invoke(Direct3D8QueryInterfaceIUnknown);
     Invoke(Direct3D8QueryInterfaceAll);
 }
@@ -51,6 +52,7 @@ VOID ExecuteDirect3D8(LPMODULE module)
 VOID ExecuteDirect3DBaseTexture8(LPMODULE module)
 {
     Invoke(Direct3DBaseTexture8Create);
+    Invoke(Direct3DBaseTexture8Release);
     Invoke(Direct3DBaseTexture8QueryInterfaceIUnknown);
     Invoke(Direct3DBaseTexture8QueryInterfaceAll);
     Invoke(Direct3DBaseTexture8UnknownQueryInterfaceAll);
@@ -59,6 +61,7 @@ VOID ExecuteDirect3DBaseTexture8(LPMODULE module)
 VOID ExecuteDirect3DCubeTexture8(LPMODULE module)
 {
     Invoke(Direct3DCubeTexture8Create);
+    Invoke(Direct3DCubeTexture8Release);
     Invoke(Direct3DCubeTexture8QueryInterfaceIUnknown);
     Invoke(Direct3DCubeTexture8QueryInterfaceAll);
     Invoke(Direct3DCubeTexture8UnknownQueryInterfaceAll);
@@ -67,14 +70,17 @@ VOID ExecuteDirect3DCubeTexture8(LPMODULE module)
 VOID ExecuteDirect3DDevice8(LPMODULE module)
 {
     Invoke(Direct3DDevice8Create);
+    Invoke(Direct3DDevice8Release);
     Invoke(Direct3DDevice8QueryInterfaceIUnknown);
     Invoke(Direct3DDevice8QueryInterfaceAll);
     Invoke(Direct3DDevice8UnknownQueryInterfaceAll);
+    Invoke(Direct3DDevice8SetRenderTarget);
 }
 
 VOID ExecuteDirect3DIndexBuffer8(LPMODULE module)
 {
     Invoke(Direct3DIndexBuffer8Create);
+    Invoke(Direct3DIndexBuffer8Release);
     Invoke(Direct3DIndexBuffer8QueryInterfaceIUnknown);
     Invoke(Direct3DIndexBuffer8QueryInterfaceAll);
     Invoke(Direct3DIndexBuffer8UnknownQueryInterfaceAll);
@@ -83,6 +89,7 @@ VOID ExecuteDirect3DIndexBuffer8(LPMODULE module)
 VOID ExecuteDirect3DResource8(LPMODULE module)
 {
     Invoke(Direct3DResource8Create);
+    Invoke(Direct3DResource8Release);
     Invoke(Direct3DResource8QueryInterfaceIUnknown);
     Invoke(Direct3DResource8QueryInterfaceAll);
 }
@@ -90,6 +97,7 @@ VOID ExecuteDirect3DResource8(LPMODULE module)
 VOID ExecuteDirect3DSurface8(LPMODULE module)
 {
     Invoke(Direct3DSurface8Create);
+    Invoke(Direct3DSurface8Release);
     Invoke(Direct3DSurface8QueryInterfaceIUnknown);
     Invoke(Direct3DSurface8QueryInterfaceAll);
     Invoke(Direct3DSurface8UnknownQueryInterfaceAll);
@@ -98,6 +106,7 @@ VOID ExecuteDirect3DSurface8(LPMODULE module)
 VOID ExecuteDirect3DSwapChain8(LPMODULE module)
 {
     Invoke(Direct3DSwapChain8Create);
+    Invoke(Direct3DSwapChain8Release);
     Invoke(Direct3DSwapChain8QueryInterfaceIUnknown);
     Invoke(Direct3DSwapChain8QueryInterfaceAll);
     Invoke(Direct3DSwapChain8UnknownQueryInterfaceAll);
@@ -106,6 +115,7 @@ VOID ExecuteDirect3DSwapChain8(LPMODULE module)
 VOID ExecuteDirect3DTexture8(LPMODULE module)
 {
     Invoke(Direct3DTexture8Create);
+    Invoke(Direct3DTexture8Release);
     Invoke(Direct3DTexture8QueryInterfaceIUnknown);
     Invoke(Direct3DTexture8QueryInterfaceAll);
     Invoke(Direct3DTexture8UnknownQueryInterfaceAll);
@@ -114,6 +124,7 @@ VOID ExecuteDirect3DTexture8(LPMODULE module)
 VOID ExecuteDirect3DVertexBuffer8(LPMODULE module)
 {
     Invoke(Direct3DVertexBuffer8Create);
+    Invoke(Direct3DVertexBuffer8Release);
     Invoke(Direct3DVertexBuffer8QueryInterfaceIUnknown);
     Invoke(Direct3DVertexBuffer8QueryInterfaceAll);
     Invoke(Direct3DVertexBuffer8UnknownQueryInterfaceAll);
@@ -122,6 +133,7 @@ VOID ExecuteDirect3DVertexBuffer8(LPMODULE module)
 VOID ExecuteDirect3DVolume8(LPMODULE module)
 {
     Invoke(Direct3DVolume8Create);
+    Invoke(Direct3DVolume8Release);
     Invoke(Direct3DVolume8QueryInterfaceIUnknown);
     Invoke(Direct3DVolume8QueryInterfaceAll);
     Invoke(Direct3DVolume8UnknownQueryInterfaceAll);
@@ -130,6 +142,7 @@ VOID ExecuteDirect3DVolume8(LPMODULE module)
 VOID ExecuteDirect3DVolumeTexture8(LPMODULE module)
 {
     Invoke(Direct3DVolumeTexture8Create);
+    Invoke(Direct3DVolumeTexture8Release);
     Invoke(Direct3DVolumeTexture8QueryInterfaceIUnknown);
     Invoke(Direct3DVolumeTexture8QueryInterfaceAll);
     Invoke(Direct3DVolumeTexture8UnknownQueryInterfaceAll);

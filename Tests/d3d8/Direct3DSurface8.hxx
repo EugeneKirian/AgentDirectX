@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DSurface8Create(LPMODULE module);
 
+VOID Direct3DSurface8Release(LPMODULE module);
+
 VOID Direct3DSurface8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DSurface8QueryInterfaceAll(LPMODULE module);

@@ -127,7 +127,8 @@ protected:
 template<typename T, typename TT>
 inline TT Assemble(LPASSEMBLER assembler, LPASSEMBLERDELEGATE delegate, REFIID riid, LPVOID value, CONST BOOL base)
 {
-    return delegate->IsValue(value, riid, base) ? (TT)delegate->Agent(value, riid) : new T(assembler, delegate, riid, (TT)value);
+    return delegate->IsAgent(value, riid, base) ? (TT)value
+        : delegate->IsValue(value, riid, base) ? (TT)delegate->Agent(value, riid) : (new T(assembler, delegate, riid, (TT)value));
 }
 
 #define AssembleAgent(T, A, D, V)((I##T*)(Assemble<T, I##T*>(A, D, IID_I##T, (I##T*)V, FALSE)))

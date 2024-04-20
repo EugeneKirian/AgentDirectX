@@ -33,6 +33,19 @@ VOID Direct3D8Create(LPMODULE module)
     DIRECTRELEASE(d3d);
 }
 
+VOID Direct3D8Release(LPMODULE module)
+{
+    LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);
+    IsNotEqual(d3d, NULL);
+
+    d3d->AddRef();
+    IsEqual(d3d->Release(), 1);
+    //IsEqual(d3d->Release(), 0);
+    //IsEqual(d3d->Release(), 0);
+
+    DIRECTRELEASE(d3d);
+}
+
 VOID Direct3D8QueryInterfaceIUnknown(LPMODULE module)
 {
     LPDIRECT3D8 d3d = module->Direct3DCreate8(D3D_SDK_VERSION);

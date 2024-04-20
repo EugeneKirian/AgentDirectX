@@ -70,7 +70,7 @@ ULONG Direct3DResource8::Release()
 {
     CONST ULONG result = this->State.Self->Release();
 
-    if (result == 0) { delete this; }
+    //if (result == 0) { delete this; }
 
     return result;
 }

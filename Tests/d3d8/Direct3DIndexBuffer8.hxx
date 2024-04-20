@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DIndexBuffer8Create(LPMODULE module);
 
+VOID Direct3DIndexBuffer8Release(LPMODULE module);
+
 VOID Direct3DIndexBuffer8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DIndexBuffer8QueryInterfaceAll(LPMODULE module);

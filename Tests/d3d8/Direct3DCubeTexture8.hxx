@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DCubeTexture8Create(LPMODULE module);
 
+VOID Direct3DCubeTexture8Release(LPMODULE module);
+
 VOID Direct3DCubeTexture8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DCubeTexture8QueryInterfaceAll(LPMODULE module);

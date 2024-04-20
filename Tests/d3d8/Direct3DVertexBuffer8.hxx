@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DVertexBuffer8Create(LPMODULE module);
 
+VOID Direct3DVertexBuffer8Release(LPMODULE module);
+
 VOID Direct3DVertexBuffer8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DVertexBuffer8QueryInterfaceAll(LPMODULE module);

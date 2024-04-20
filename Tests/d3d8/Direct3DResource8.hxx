@@ -27,6 +27,8 @@ SOFTWARE.
 
 VOID Direct3DResource8Create(LPMODULE module);
 
+VOID Direct3DResource8Release(LPMODULE module);
+
 VOID Direct3DResource8QueryInterfaceIUnknown(LPMODULE module);
 
 VOID Direct3DResource8QueryInterfaceAll(LPMODULE module);
