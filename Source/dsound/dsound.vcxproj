@@ -261,7 +261,11 @@
     <ClInclude Include="Export.hxx" />
     <ClInclude Include="KsPropertySet.hxx" />
     <ClInclude Include="Module.hxx" />
+    <ClInclude Include="Resources.hxx" />
     <ClInclude Include="Unknown.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

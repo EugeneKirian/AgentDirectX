@@ -22,14 +22,7 @@ SOFTWARE.
 
 #pragma once
 
-#define NOCRYPT
-#define NOMINMAX
-#define STRICT
-#define WIN32_MEAN_AND_LEAN
+#include "Base.hxx"
+#include "Module.hxx"
 
-/* Visual Studio 2005 */
-#if _MSC_VER == 1400
-#define POINTER_64 __ptr64
-#endif
-
-#include <windows.h>
+VOID DllGetClassObject(LPMODULE module);
